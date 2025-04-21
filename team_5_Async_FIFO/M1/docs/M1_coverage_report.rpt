@@ -1,0 +1,900 @@
+Coverage Report by file with details
+
+=================================================================================
+=== File: async_fifo_tb.sv
+=================================================================================
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           65        65         0     100.0
+
+================================Statement Details================================
+
+Statement Coverage for file async_fifo_tb.sv --
+
+    1                                                module custom_async_fifo_tb;
+    2                                                
+    3                                                	// Parameters
+    4                                                	parameter W_CYCLE = 100; 	// X time steps
+    5                                                	parameter R_CYCLE = 75;		// Initial testing will have R and W have the same clocks but shifted slightly
+    6                                                	parameter CLK_SHIFT = 25;
+    7                                                	parameter SIZE 	= 32;
+    8                                                	parameter DEPTH = 4;
+    9                                                
+    10                                               
+    11                                               	// DUT Inputs
+    12                                               	logic wclk, rclk, ainit;	// Clocks and reset
+    13                                               	logic wr_en, rd_en;			// Enable
+    14                                               	logic [SIZE-1:0] din;		// Data in
+    15                                               
+    16                                               	// DUT Outputs
+    17                                               	logic full_f, empty_f;					// Required Flags
+    18                                               	logic almost_full_f, almost_empty_f;	// Optional Flags		- Unused
+    19                                               	logic wr_ack, rd_ack, wr_err, rd_err;	// Optional Handshake	- Unused
+    20                                               	logic [SIZE-1:0] wr_count, rd_count;	// Count Vectors		- Unused
+    21                                               	logic [SIZE-1:0] dout;					// Data Out
+    22                                               
+    23                                               	// Variables
+    24                                               
+    25                                               
+    26                                               	// DUT instantiation
+    27                                               	custom_async_fifo #(SIZE, DEPTH) iDUT (		// Test that Parameters work (defaults are 8, 4)
+    28                                               		.din(din),
+    29                                               		.dout(dout),
+    30                                               		.fifo_full(full_f),
+    31                                               		.fifo_empty(empty_f),
+    32                                               		.wen(wr_en),
+    33                                               		.wclk_i(wclk),
+    34                                               		.wrst_n_i(ainit),
+    35                                               		.ren(rd_en),
+    36                                               		.rclk_i(rclk),
+    37                                               		.rrst_n_i(ainit)
+    38                                               	);
+    39                                               
+    40                                               
+    41                                               	// Generate Clocks
+    42                                               	initial begin
+    43              1                          1     		wclk <= 0;
+    44                                               		// rclk <= 0;
+    45              1                          1     		forever #(W_CYCLE/2) wclk = ~wclk;
+    45              2                        273     
+    45              3                        272     
+    46                                               		// #(CLK_SHIFT)
+    47                                               		// forever #(R_CYCLE/2) rclk = ~rclk;	// rclk shifted 1/4 clk from wclk
+    48                                               	end
+    49                                               
+    50                                               	initial begin
+    51              1                          1     		rclk <= 0;
+    52              1                          1     		#(CLK_SHIFT)
+    53              1                          1     		forever #(R_CYCLE/2) rclk = ~rclk;	// rclk shifted 1/4 clk from wclk
+    53              2                        367     
+    53              3                        366     
+    54                                               	end
+    55                                               
+    56                                               	// Testbench Initialization
+    57                                               	initial begin
+    58              1                          1     		ainit 	= 0;
+    59              1                          1     		wr_en 	= 0;
+    60              1                          1     		rd_en 	= 0;
+    61              1                          1     		din 	= 0;
+    62                                               	end
+    63                                               
+    64                                               	// Testbench Outputs
+    65                                               	// always @(full_f, almost_full_f)
+    66                                               	// 	$display($time, "\tFull Flags:\tFull = %d\tAlmost FUll = %d", full_f, almost_full_f);
+    67                                               
+    68                                               	// always @(empty_f, almost_empty_f)
+    69                                               	// 	$display($time, "\tEMPTY Flags:\tEmpty = %d\tAlmost Empty = %d", empty_f, almost_empty_f);
+    70                                               
+    71                                               	// always @(rd_err, wr_err)
+    72                                               	// 	$display($time, "\tERR Flags:\twr_err = %d\t rd_err = %d", wr_err, rd_err);
+    73                                               	
+    74                                               	// always @(dout)
+    75                                               	// 	$display($time, "\tData Out:\tdout = %d", dout);
+    76                                               
+    77                                               
+    78                                               	// Test Stimulus
+    79                                               	initial begin
+    80              1                          1     		$display("Testbench Output Format: value = actual, expected");
+    81                                               
+    82                                               		// Test AINT Fall + First WCLK (FULL Flags)   --->   Replace with Sequence Property
+    83              1                          1     		$display("\n!!! Checking Flag Status after AINIT on first WCLK !!!");
+    84              1                          5     		repeat(5) @(negedge wclk);
+    84              2                          5     
+    85              1                          1     		$display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    86              1                          1     		ainit = 1;
+    87              1                          1     		$display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    88              1                          1     		@(negedge wclk);
+    89              1                          1     		$display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    90                                               
+    91                                               		// Test Initial Writes and EMPTY Flags   --->   Replace with Sequence Property
+    92              1                          1     		$display("\n!!! Checking Flag Status after initial writes !!!");
+    93              1                          5     		repeat(5) @(negedge wclk);		// First Write
+    93              2                          5     
+    94              1                          1     		$display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    95              1                          1     		din = $random();
+    96              1                          1     		wr_en = 1;
+    97              1                          1     		@(negedge wclk);
+    98              1                          1     		wr_en = 0;
+    99              1                          1     		@(negedge wclk);
+    100             1                          1     		$display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    101             1                          2     		repeat(2) @(negedge wclk);		// Second Write
+    101             2                          2     
+    102             1                          1     		din = $random();
+    103             1                          1     		wr_en = 1;
+    104             1                          1     		@(negedge wclk);
+    105             1                          1     		wr_en = 0;
+    106             1                          1     		@(negedge wclk);
+    107             1                          1     		$display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    108                                              
+    109                                              		// Write until full (Should be max_depth+2 writes) Flags should change, err signals should send with the final writes. 
+    110             1                          1     		$display("\n!!! Fill the Fifo !!!");
+    111             1                         16     		repeat(16) begin
+    112             1                         32     			repeat(2) @(negedge wclk);		// 2 cycles between writes
+    112             2                         32     
+    113             1                         16     			din = $random();
+    114             1                         16     			wr_en = 1;
+    115                                              			// $display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    116             1                         16     			@(negedge wclk);
+    117             1                         16     			wr_en = 0;
+    118             1                         16     			$display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    119             1                         16     			@(negedge wclk);
+    120                                              		end
+    121                                              
+    122                                              
+    123                                              		// Read until empty (Should be max_depth+2 reads) Flags should change, err signals should send with the final reads. 
+    124             1                          1     		$display("\n!!! Empty the Fifo !!!");
+    125             1                          2     		repeat(2) @(negedge wclk);	//Stimulus should fall on the falling edge of rclk
+    125             2                          2     
+    126             1                          1     		din = 0;
+    127             1                         18     		repeat(18)	begin
+    128             1                         36     			repeat(2) @(negedge rclk);		// 2 cycles between reads
+    128             2                         36     
+    129             1                         18     			rd_en = 1;
+    130                                              			// $display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    131             1                         18     			@(negedge rclk);
+    132             1                         18     			rd_en = 0;
+    133             1                         18     			$display($time, "\tFlags:\tFull = %d\tEmpty = %d\t din = %d\tdout = %d", full_f, empty_f, din, dout);
+    134             1                         18     			@(negedge rclk);
+    135                                              		end
+    136                                              
+    137             1                          2     		repeat(2) @(negedge wclk);
+    137             2                          2     
+    138             1                          1     		$stop;
+    139                                              	end
+    140                                              
+    141                                              
+    142                                              endmodule : custom_async_fifo_tb
+
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         0         0         0     100.0
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              0         0         0     100.0
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms             0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                    566       141       425      24.9
+
+================================Toggle Details================================
+
+Toggle Coverage for File async_fifo_tb.sv --
+
+       Line                                   Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+--------------------------------------------------------------------------------------------------------------------------------------------------
+         12                                  ainit           0           1           0           0           0           0           3       16.67 
+         18                          almost_full_f           0           0           0           0           0           0           3        0.00 
+         18                         almost_empty_f           0           0           0           0           0           0           3        0.00 
+         19                                 wr_err           0           0           0           0           0           0           3        0.00 
+         19                                 wr_ack           0           0           0           0           0           0           3        0.00 
+         19                                 rd_err           0           0           0           0           0           0           3        0.00 
+         19                                 rd_ack           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[9]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[8]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[7]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[6]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[5]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[4]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[3]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[31]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[30]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[2]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[29]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[28]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[27]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[26]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[25]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[24]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[23]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[22]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[21]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[20]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[1]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[19]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[18]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[17]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[16]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[15]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[14]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[13]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[12]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[11]           0           0           0           0           0           0           3        0.00 
+         20                           wr_count[10]           0           0           0           0           0           0           3        0.00 
+         20                            wr_count[0]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[9]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[8]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[7]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[6]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[5]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[4]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[3]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[31]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[30]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[2]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[29]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[28]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[27]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[26]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[25]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[24]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[23]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[22]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[21]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[20]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[1]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[19]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[18]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[17]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[16]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[15]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[14]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[13]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[12]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[11]           0           0           0           0           0           0           3        0.00 
+         20                           rd_count[10]           0           0           0           0           0           0           3        0.00 
+         20                            rd_count[0]           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =        141 
+Toggled Node Count   =         70 
+Untoggled Node Count =         71 
+
+Toggle Coverage      =       24.9% (141 of 566 bins)
+
+=================================================================================
+=== File: fifomem.sv
+=================================================================================
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         3         0     100.0
+
+================================Statement Details================================
+
+Statement Coverage for file fifomem.sv --
+
+    1                                                module custom_fifomem (
+    2                                                  wen, fifo_full, wclk_i,
+    3                                                  wr_addr, rd_addr,
+    4                                                  din,
+    5                                                  dout
+    6                                                );
+    7                                                  parameter DATASIZE = 8;   // Memory data word width
+    8                                                  parameter ADDRSIZE = 32;  // Number of mem address bits
+    9                                                  localparam DEPTH = 2**ADDRSIZE;
+    10                                               
+    11                                                 input  wen, fifo_full, wclk_i;
+    12                                                 input  [ADDRSIZE-1:0] wr_addr, rd_addr;
+    13                                                 input  [DATASIZE-1:0] din;
+    14                                                 output [DATASIZE-1:0] dout;
+    15                                               
+    16                                                 logic [DATASIZE-1:0] mem_array [0:DEPTH-1];
+    17                                               
+    18              1                         34       assign dout = mem_array[rd_addr];
+    19                                               
+    20              1                         39       always_ff @(posedge wclk_i) begin
+    21                                                   if (wen & ~fifo_full)
+    22              1                         16           mem_array[wr_addr] <= din;
+    23                                                 end
+    24                                               
+    25                                               endmodule
+
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         2         2         0     100.0
+
+================================Branch Details================================
+
+Branch Coverage for file fifomem.sv --
+
+------------------------------------IF Branch------------------------------------
+    21                                        39     Count coming in to IF
+    21              1                         16         if (wen & ~fifo_full)
+                                              23     All False Count
+Branch totals: 2 hits of 2 branches = 100.0%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              2         2         0     100.0
+
+================================Condition Details================================
+
+Condition Coverage for file fifomem.sv --
+
+----------------Focused Condition View-------------------
+Line       21 Item    1  (wen & ~fifo_full)
+Condition totals: 2 of 2 input terms covered = 100.0%
+
+
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms             0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                    150       150         0     100.0
+
+================================Toggle Details================================
+
+Toggle Coverage for File fifomem.sv --
+
+       Line                                   Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =         75 
+Toggled Node Count   =         75 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =      100.0% (150 of 150 bins)
+
+=================================================================================
+=== File: rptr_empty.sv
+=================================================================================
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           10        10         0     100.0
+
+================================Statement Details================================
+
+Statement Coverage for file rptr_empty.sv --
+
+    1                                                module custom_rptr_empty (
+    2                                                  ren, rclk_i, rrst_n_i,
+    3                                                  wptr_sync2_rdclk,
+    4                                                  fifo_empty,
+    5                                                  rd_addr,
+    6                                                  rptr_g
+    7                                                );
+    8                                                  parameter ADDRSIZE = 32;
+    9                                                  input  ren, rclk_i, rrst_n_i;
+    10                                                 input  [ADDRSIZE:0] wptr_sync2_rdclk;
+    11                                                 output reg fifo_empty;
+    12                                                 output [ADDRSIZE-1:0] rd_addr;
+    13                                                 output reg [ADDRSIZE:0] rptr_g;
+    14                                               
+    15                                                 reg [ADDRSIZE:0] rbin_reg;
+    16                                                 wire [ADDRSIZE:0] rgray_next, rbin_next;
+    17                                                 wire fifo_empty_val;
+    18                                               
+    19              1                         35       always_ff @(posedge rclk_i or negedge rrst_n_i) begin
+    20                                                   if (~rrst_n_i)
+    21              1                          2           {rbin_reg, rptr_g} <= '0;
+    22                                                   else
+    23              1                         33           {rbin_reg, rptr_g} <= {rbin_next, rgray_next};
+    24                                                 end
+    25                                               
+    26              1                         18       assign rd_addr = rbin_reg[ADDRSIZE-1:0];
+    27              1                         56       assign rbin_next = rbin_reg + (ren & ~fifo_empty);
+    28              1                         48       assign rgray_next = (rbin_next >> 1) ^ rbin_next;
+    29                                               
+    30              1                         65       assign fifo_empty_val = (rgray_next == wptr_sync2_rdclk);
+    31                                               
+    32              1                          8       always_ff @(posedge rclk_i or negedge rrst_n_i) begin
+    33                                                   if (~rrst_n_i)
+    34              1                          2           fifo_empty <= 1'b1;
+    35                                                   else
+    36              1                          6           fifo_empty <= fifo_empty_val;
+    37                                                 end
+    38                                               
+    39                                               endmodule
+
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         4         4         0     100.0
+
+================================Branch Details================================
+
+Branch Coverage for file rptr_empty.sv --
+
+------------------------------------IF Branch------------------------------------
+    20                                        35     Count coming in to IF
+    20              1                          2         if (~rrst_n_i)
+    22              1                         33         else
+Branch totals: 2 hits of 2 branches = 100.0%
+
+------------------------------------IF Branch------------------------------------
+    33                                         8     Count coming in to IF
+    33              1                          2         if (~rrst_n_i)
+    35              1                          6         else
+Branch totals: 2 hits of 2 branches = 100.0%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              0         0         0     100.0
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms             0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                     92        62        30      67.3
+
+================================Toggle Details================================
+
+Toggle Coverage for File rptr_empty.sv --
+
+       Line                                   Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+--------------------------------------------------------------------------------------------------------------------------------------------------
+          9                               rrst_n_i           0           1           0           0           0           0           3       16.67 
+         10                    wptr_sync2_rdclk[4]           0           1           0           0           0           0           3       16.67 
+         10                    wptr_sync2_rdclk[3]           0           1           0           0           0           0           3       16.67 
+         13                              rptr_g[4]           0           1           0           0           0           0           3       16.67 
+         13                              rptr_g[3]           0           1           0           0           0           0           3       16.67 
+         15                            rbin_reg[4]           0           1           0           0           0           0           3       16.67 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =         34 
+Toggled Node Count   =         28 
+Untoggled Node Count =          6 
+
+Toggle Coverage      =       67.3% (62 of 92 bins)
+
+=================================================================================
+=== File: sync_r2w.sv
+=================================================================================
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         3         0     100.0
+
+================================Statement Details================================
+
+Statement Coverage for file sync_r2w.sv --
+
+    1                                                module custom_sync_r2w (
+    2                                                  wclk_i, wrst_n_i,
+    3                                                  rptr_g,
+    4                                                  rptr_sync2_wrclk
+    5                                                );
+    6                                                
+    7                                                  parameter ADDRSIZE = 32;
+    8                                                  input   wclk_i, wrst_n_i;
+    9                                                  input   [ADDRSIZE:0] rptr_g;
+    10                                                 output  reg [ADDRSIZE:0] rptr_sync2_wrclk;
+    11                                               
+    12                                                 reg [ADDRSIZE:0] rptr_sync1_wrclk;
+    13                                               
+    14              1                         50       always_ff @(posedge wclk_i or negedge wrst_n_i) begin
+    15                                                   if (~wrst_n_i)
+    16              1                          2           {rptr_sync2_wrclk, rptr_sync1_wrclk} <= '0;
+    17                                                   else
+    18              1                         48           {rptr_sync2_wrclk, rptr_sync1_wrclk} <= {rptr_sync1_wrclk, rptr_g};
+    19                                                 end
+    20                                               
+    21                                               endmodule
+
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         2         2         0     100.0
+
+================================Branch Details================================
+
+Branch Coverage for file sync_r2w.sv --
+
+------------------------------------IF Branch------------------------------------
+    15                                        50     Count coming in to IF
+    15              1                          2         if (~wrst_n_i)
+    17              1                         48         else
+Branch totals: 2 hits of 2 branches = 100.0%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              0         0         0     100.0
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms             0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                     62        27        35      43.5
+
+================================Toggle Details================================
+
+Toggle Coverage for File sync_r2w.sv --
+
+       Line                                   Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+--------------------------------------------------------------------------------------------------------------------------------------------------
+          8                               wrst_n_i           0           1           0           0           0           0           3       16.67 
+          9                              rptr_g[4]           0           1           0           0           0           0           3       16.67 
+          9                              rptr_g[3]           0           1           0           0           0           0           3       16.67 
+         10                    rptr_sync2_wrclk[4]           0           1           0           0           0           0           3       16.67 
+         10                    rptr_sync2_wrclk[3]           0           1           0           0           0           0           3       16.67 
+         12                    rptr_sync1_wrclk[4]           0           1           0           0           0           0           3       16.67 
+         12                    rptr_sync1_wrclk[3]           0           1           0           0           0           0           3       16.67 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =         17 
+Toggled Node Count   =         10 
+Untoggled Node Count =          7 
+
+Toggle Coverage      =       43.5% (27 of 62 bins)
+
+=================================================================================
+=== File: sync_w2r.sv
+=================================================================================
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         3         0     100.0
+
+================================Statement Details================================
+
+Statement Coverage for file sync_w2r.sv --
+
+    1                                                module custom_sync_w2r (
+    2                                                  rclk_i, rrst_n_i,
+    3                                                  wptr_g,
+    4                                                  wptr_sync2_rdclk
+    5                                                );
+    6                                                
+    7                                                  parameter ADDRSIZE = 32;
+    8                                                  input   rclk_i, rrst_n_i;
+    9                                                  input   [ADDRSIZE:0] wptr_g;
+    10                                                 output  reg [ADDRSIZE:0] wptr_sync2_rdclk;
+    11                                               
+    12                                                 reg [ADDRSIZE:0] wptr_sync1_rdclk;
+    13                                               
+    14              1                         51       always_ff @(posedge rclk_i or negedge rrst_n_i) begin
+    15                                                   if (~rrst_n_i)
+    16              1                          2           {wptr_sync2_rdclk, wptr_sync1_rdclk} <= '0;
+    17                                                   else
+    18              1                         49           {wptr_sync2_rdclk, wptr_sync1_rdclk} <= {wptr_sync1_rdclk, wptr_g};
+    19                                                 end
+    20                                               
+    21                                               endmodule
+
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         2         2         0     100.0
+
+================================Branch Details================================
+
+Branch Coverage for file sync_w2r.sv --
+
+------------------------------------IF Branch------------------------------------
+    15                                        51     Count coming in to IF
+    15              1                          2         if (~rrst_n_i)
+    17              1                         49         else
+Branch totals: 2 hits of 2 branches = 100.0%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              0         0         0     100.0
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms             0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                     62        27        35      43.5
+
+================================Toggle Details================================
+
+Toggle Coverage for File sync_w2r.sv --
+
+       Line                                   Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+--------------------------------------------------------------------------------------------------------------------------------------------------
+          8                               rrst_n_i           0           1           0           0           0           0           3       16.67 
+          9                              wptr_g[4]           0           1           0           0           0           0           3       16.67 
+          9                              wptr_g[3]           0           1           0           0           0           0           3       16.67 
+         10                    wptr_sync2_rdclk[4]           0           1           0           0           0           0           3       16.67 
+         10                    wptr_sync2_rdclk[3]           0           1           0           0           0           0           3       16.67 
+         12                    wptr_sync1_rdclk[4]           0           1           0           0           0           0           3       16.67 
+         12                    wptr_sync1_rdclk[3]           0           1           0           0           0           0           3       16.67 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =         17 
+Toggled Node Count   =         10 
+Untoggled Node Count =          7 
+
+Toggle Coverage      =       43.5% (27 of 62 bins)
+
+=================================================================================
+=== File: top.sv
+=================================================================================
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            0         0         0     100.0
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         0         0         0     100.0
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              0         0         0     100.0
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms             0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                    240       190        50      79.1
+
+================================Toggle Details================================
+
+Toggle Coverage for File top.sv --
+
+       Line                                   Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+--------------------------------------------------------------------------------------------------------------------------------------------------
+         12                               wrst_n_i           0           1           0           0           0           0           3       16.67 
+         13                               rrst_n_i           0           1           0           0           0           0           3       16.67 
+         20                    wptr_sync2_rdclk[4]           0           1           0           0           0           0           3       16.67 
+         20                    wptr_sync2_rdclk[3]           0           1           0           0           0           0           3       16.67 
+         20                              wptr_g[4]           0           1           0           0           0           0           3       16.67 
+         20                              wptr_g[3]           0           1           0           0           0           0           3       16.67 
+         20                    rptr_sync2_wrclk[4]           0           1           0           0           0           0           3       16.67 
+         20                    rptr_sync2_wrclk[3]           0           1           0           0           0           0           3       16.67 
+         20                              rptr_g[4]           0           1           0           0           0           0           3       16.67 
+         20                              rptr_g[3]           0           1           0           0           0           0           3       16.67 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =        100 
+Toggled Node Count   =         90 
+Untoggled Node Count =         10 
+
+Toggle Coverage      =       79.1% (190 of 240 bins)
+
+=================================================================================
+=== File: wptr_full.sv
+=================================================================================
+Statement Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           10        10         0     100.0
+
+================================Statement Details================================
+
+Statement Coverage for file wptr_full.sv --
+
+    1                                                module custom_wptr_full (
+    2                                                  wen, wclk_i, wrst_n_i,
+    3                                                  rptr_sync2_wrclk,
+    4                                                  fifo_full,
+    5                                                  wr_addr,
+    6                                                  wptr_g
+    7                                                );
+    8                                                
+    9                                                  parameter ADDRSIZE = 32;
+    10                                                 input  wen, wclk_i, wrst_n_i;
+    11                                                 input  [ADDRSIZE:0] rptr_sync2_wrclk;
+    12                                                 output reg fifo_full;
+    13                                                 output [ADDRSIZE-1:0] wr_addr;
+    14                                                 output reg [ADDRSIZE:0] wptr_g;
+    15                                               
+    16                                                 reg [ADDRSIZE:0] wbin_reg;
+    17                                                 wire [ADDRSIZE:0] wgray_next, wbin_next;
+    18                                                 wire fifo_full_val;
+    19                                               
+    20              1                         35       always_ff @(posedge wclk_i or negedge wrst_n_i) begin
+    21                                                   if (~wrst_n_i)
+    22              1                          2           {wbin_reg, wptr_g} <= '0;
+    23                                                   else
+    24              1                         33           {wbin_reg, wptr_g} <= {wbin_next, wgray_next};
+    25                                                 end
+    26                                               
+    27              1                         18       assign wr_addr     = wbin_reg[ADDRSIZE-1:0];
+    28              1                         56       assign wbin_next   = wbin_reg + (wen & ~fifo_full);
+    29              1                         48       assign wgray_next  = (wbin_next >> 1) ^ wbin_next;
+    30                                               
+    31              1                         65       assign fifo_full_val = (wgray_next == {~rptr_sync2_wrclk[ADDRSIZE:ADDRSIZE-1], rptr_sync2_wrclk[ADDRSIZE-2:0]});
+    32                                               
+    33              1                          8       always_ff @(posedge wclk_i or negedge wrst_n_i) begin
+    34                                                   if (~wrst_n_i)
+    35              1                          2           fifo_full <= 1'b0;
+    36                                                   else
+    37              1                          6           fifo_full <= fifo_full_val;
+    38                                                 end
+    39                                               
+    40                                               endmodule
+
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         4         4         0     100.0
+
+================================Branch Details================================
+
+Branch Coverage for file wptr_full.sv --
+
+------------------------------------IF Branch------------------------------------
+    21                                        35     Count coming in to IF
+    21              1                          2         if (~wrst_n_i)
+    23              1                         33         else
+Branch totals: 2 hits of 2 branches = 100.0%
+
+------------------------------------IF Branch------------------------------------
+    34                                         8     Count coming in to IF
+    34              1                          2         if (~wrst_n_i)
+    36              1                          6         else
+Branch totals: 2 hits of 2 branches = 100.0%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              0         0         0     100.0
+Expression Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Expression Terms             0         0         0     100.0
+FSM Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                     92        62        30      67.3
+
+================================Toggle Details================================
+
+Toggle Coverage for File wptr_full.sv --
+
+       Line                                   Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+--------------------------------------------------------------------------------------------------------------------------------------------------
+         10                               wrst_n_i           0           1           0           0           0           0           3       16.67 
+         11                    rptr_sync2_wrclk[4]           0           1           0           0           0           0           3       16.67 
+         11                    rptr_sync2_wrclk[3]           0           1           0           0           0           0           3       16.67 
+         14                              wptr_g[4]           0           1           0           0           0           0           3       16.67 
+         14                              wptr_g[3]           0           1           0           0           0           0           3       16.67 
+         16                            wbin_reg[4]           0           1           0           0           0           0           3       16.67 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =         34 
+Toggled Node Count   =         28 
+Untoggled Node Count =          6 
+
+Toggle Coverage      =       67.3% (62 of 92 bins)
+
+
+Total Coverage By File (code coverage only, filtered view): 88.0%
+
