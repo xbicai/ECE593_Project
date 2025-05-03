@@ -1,0 +1,11 @@
+./async_fifo/rtl/fifomem.sv
+./async_fifo/rtl/rptr_empty.sv
+./async_fifo/rtl/sync_r2w.sv
+./async_fifo/rtl/sync_w2r.sv
+./async_fifo/rtl/wptr_full.sv
+./async_fifo/rtl/top.sv
+
+./async_fifo/sim/async_fifo_interface.sv
+./async_fifo/sim/package.sv
+
+./async_fifo_tb.sv
