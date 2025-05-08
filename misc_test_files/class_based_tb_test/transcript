@@ -1,0 +1,40 @@
+# do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 15:30:47 on May 08,2025
+# vlog ./rtl/dut.sv 
+# -- Compiling module adder
+# 
+# Top level modules:
+# 	adder
+# End time: 15:30:47 on May 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 15:30:47 on May 08,2025
+# vlog ./tb_interface.sv 
+# -- Compiling interface tb_intf
+# 
+# Top level modules:
+# 	--none--
+# End time: 15:30:47 on May 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 15:30:47 on May 08,2025
+# vlog ./tb_package.sv 
+# -- Compiling package class_tb_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 15:30:47 on May 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 15:30:47 on May 08,2025
+# vlog ./class_tb.sv 
+# -- Compiling package class_tb_sv_unit
+# -- Importing package class_tb_pkg
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 15:30:47 on May 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
