@@ -1,0 +1,87 @@
+# vsim -c tb -voptargs=""+acc"" -logfile ./docs/class_tb_nocov_transcript 
+# Start time: 15:30:47 on May 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 10.6b linux_x86_64 May 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_intf(fast)
+# Loading work.class_tb_pkg(fast)
+# Loading work.class_tb_sv_unit(fast)
+# Loading work.tb(fast)
+# Loading work.tb_intf(fast)
+# Loading work.adder(fast)
+#                   20	Reset Started
+#                   40	Reset Ended
+#                   40	Generator Started, Tests =  10
+#                   40	Generator Completed
+#                   40	Driver Started
+#                   40	Monitor In Started
+#                   40	Monitor Out Started
+#                   40	Scoreboard Started
+# 
+#                   43	Monitor In 	  0,  34, 168,   1
+#                   43	Monitor Out 	  0, 202,   1
+#                   43	Scoreboard out 	  0,  34, 168, 202
+# 
+#                   45	Monitor Out 	  1, 202,   1
+#                   45	Monitor In 	  1,  25,  83,   1
+# Addition Error
+#                   45	Scoreboard out 	  1,   0,   0, 202
+# 
+#                   47	Monitor In 	  2,  66, 175,   1
+#                   47	Monitor Out 	  2, 108,   1
+#                   47	Scoreboard out 	  2,  25,  83, 108
+# 
+#                   49	Monitor Out 	  3, 241,   1
+#                   49	Monitor In 	  3, 152,  18,   1
+#                   49	Scoreboard out 	  3,  66, 175, 241
+# 
+#                   51	Monitor In 	  4, 164, 216,   1
+#                   51	Monitor Out 	  4, 170,   1
+#                   51	Scoreboard out 	  4, 152,  18, 170
+# 
+#                   53	Monitor Out 	  5, 380,   1
+#                   53	Monitor In 	  5, 184,  14,   1
+#                   53	Scoreboard out 	  5, 164, 216, 380
+# 
+#                   55	Monitor In 	  6,  97,   6,   1
+#                   55	Monitor Out 	  6, 198,   1
+#                   55	Scoreboard out 	  6, 184,  14, 198
+# 
+#                   57	Monitor Out 	  7, 103,   1
+#                   57	Monitor In 	  7, 163,  49,   1
+#                   57	Scoreboard out 	  7,  97,   6, 103
+# 
+#                   59	Monitor In 	  8, 250, 130,   1
+#                   59	Monitor Out 	  8, 212,   1
+# 
+#                   59	Gen Tx =  10	Drive Tx =  10
+# 
+# 
+#                   59	Drive Valid =   9	Mon Tx =   9
+# 
+#                   59	Scoreboard out 	  8, 163,  49, 212
+# 
+# 
+#                   59	Mon Tx =   9	SCB Tx =   9
+# 
+#                   61	Monitor Out 	  9, 380,   1
+#                   61	Scoreboard out 	  9, 250, 130, 380
+# 
+#                   79	Scoreboard (T, G, B):          10,           9,           1
+# ** Note: $finish    : ./class_tb.sv(56)
+#    Time: 140 ns  Iteration: 0  Instance: /tb
+# End time: 15:30:49 on May 08,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
