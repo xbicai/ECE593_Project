@@ -18,12 +18,12 @@ We are tasked with verifying a design of our choice using a variety of different
 **Milestone 3:**
 - [ ] Finalize any changes in RTL
 - [ ] Complete the class-based verification. All components must be defined and working
-- - [ ] Transaction
-- - [ ] Generator
-- - [ ] Driver
-- - [ ] Monitors
-- - [ ] Scoreboard
-- - [ ] Coverage
+	- [ ] Transaction
+	- [ ] Generator
+	- [ ] Driver
+	- [ ] Monitors
+	- [ ] Scoreboard
+	- [ ] Coverage
 - [ ] Include both code and functional coverage reports
 - [ ] Update Verification Plan
 
