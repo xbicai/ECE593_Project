@@ -4,7 +4,9 @@ module custom_async_fifo (
   din,
   dout,
   fifo_full,
-  fifo_empty
+  fifo_empty,
+  fifo_almost_full,
+  fifo_almost_empty
 );
   parameter DATASIZE = 8;
   parameter ADDRSIZE = 4;
@@ -15,6 +17,8 @@ module custom_async_fifo (
   output [DATASIZE-1:0] dout;
   output fifo_full;
   output fifo_empty;
+  output fifo_almost_full;
+  output fifo_almost_empty;
 
   wire [ADDRSIZE-1:0] wr_addr, rd_addr;
   wire [ADDRSIZE:0] wptr_g, rptr_g, rptr_sync2_wrclk, wptr_sync2_rdclk;

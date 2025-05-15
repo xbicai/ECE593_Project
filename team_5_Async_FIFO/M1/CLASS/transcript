@@ -1,0 +1,161 @@
+# do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:49:41 on May 14,2025
+# vlog fifomem.sv 
+# -- Compiling module custom_fifomem
+# 
+# Top level modules:
+# 	custom_fifomem
+# End time: 21:49:41 on May 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:49:41 on May 14,2025
+# vlog rptr_empty.sv 
+# -- Compiling module custom_rptr_empty
+# 
+# Top level modules:
+# 	custom_rptr_empty
+# End time: 21:49:41 on May 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:49:41 on May 14,2025
+# vlog sync_r2w.sv 
+# -- Compiling module custom_sync_r2w
+# 
+# Top level modules:
+# 	custom_sync_r2w
+# End time: 21:49:41 on May 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:49:41 on May 14,2025
+# vlog sync_w2r.sv 
+# -- Compiling module custom_sync_w2r
+# 
+# Top level modules:
+# 	custom_sync_w2r
+# End time: 21:49:41 on May 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:49:41 on May 14,2025
+# vlog wptr_full.sv 
+# -- Compiling module custom_wptr_full
+# 
+# Top level modules:
+# 	custom_wptr_full
+# End time: 21:49:41 on May 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:49:41 on May 14,2025
+# vlog async_fifo_tb.sv 
+# -- Compiling module custom_async_fifo_tb
+# 
+# Top level modules:
+# 	custom_async_fifo_tb
+# End time: 21:49:41 on May 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:49:41 on May 14,2025
+# vlog top.sv 
+# -- Compiling module custom_async_fifo
+# 
+# Top level modules:
+# 	custom_async_fifo
+# End time: 21:49:41 on May 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -c custom_async_fifo_tb -gADDRSIZE=456 
+# Start time: 21:49:41 on May 14,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 10.6b linux_x86_64 May 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.custom_async_fifo_tb(fast)
+# End time: 21:49:42 on May 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim work.custom_async_fifo_tb -c 
+# Start time: 21:49:42 on May 14,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.custom_async_fifo_tb(fast)
+# End time: 21:49:43 on May 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" 
+# Start time: 21:49:43 on May 14,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.custom_async_fifo_tb(fast)
+# Loading work.custom_async_fifo(fast)
+# Loading work.custom_sync_r2w(fast)
+# Loading work.custom_sync_w2r(fast)
+# Loading work.custom_fifomem(fast)
+# Loading work.custom_rptr_empty(fast)
+# Loading work.custom_wptr_full(fast)
+# Testbench Output Format: value = actual, expected
+# 
+# !!! Checking Flag Status after AINIT on first WCLK !!!
+#                  400	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          0	dout =          x
+#                  400	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          0	dout =          x
+#                  500	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          0	dout =          x
+# 
+# !!! Checking Flag Status after initial writes !!!
+#                 1000	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          0	dout =          x
+#                 1100	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          1	dout =          1
+#                 1200	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          1	dout =          1
+#                 1500	Flags:	F = 0	E = 0	AF = 0	AE = 1	din =          2	dout =          1
+#                 1600	Flags:	F = 0	E = 0	AF = 0	AE = 1	din =          2	dout =          1
+# 
+# !!! Fill the Fifo !!!
+#                 1900	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =  303379748	dout =          1
+#                 2300	Flags:	F = 0	E = 0	AF = 0	AE = 0	din = 3230228097	dout =          1
+#                 2700	Flags:	F = 0	E = 0	AF = 0	AE = 0	din = 2223298057	dout =          1
+#                 3100	Flags:	F = 0	E = 0	AF = 0	AE = 0	din = 2985317987	dout =          1
+#                 3500	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =  112818957	dout =          1
+#                 3900	Flags:	F = 0	E = 0	AF = 0	AE = 0	din = 1189058957	dout =          1
+#                 4300	Flags:	F = 0	E = 0	AF = 0	AE = 0	din = 2999092325	dout =          1
+#                 4700	Flags:	F = 0	E = 0	AF = 0	AE = 0	din = 2302104082	dout =          1
+#                 5100	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =   15983361	dout =          1
+#                 5500	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =  114806029	dout =          1
+#                 5900	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =  992211318	dout =          1
+#                 6300	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =  512609597	dout =          1
+#                 6700	Flags:	F = 0	E = 0	AF = 0	AE = 0	din = 1993627629	dout =          1
+#                 7100	Flags:	F = 1	E = 0	AF = 1	AE = 0	din = 1177417612	dout =          1
+#                 7500	Flags:	F = 1	E = 0	AF = 1	AE = 0	din = 2097015289	dout =          1
+#                 7900	Flags:	F = 1	E = 0	AF = 1	AE = 0	din = 3812041926	dout =          1
+# 
+# !!! Empty the Fifo !!!
+#                 8387	Flags:	F = 1	E = 0	AF = 1	AE = 0	din =          0	dout =          2
+#                 8683	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout =  303379748
+#                 8979	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout = 3230228097
+#                 9275	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout = 2223298057
+#                 9571	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout = 2985317987
+#                 9867	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout =  112818957
+#                10163	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout = 1189058957
+#                10459	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout = 2999092325
+#                10755	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout = 2302104082
+#                11051	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout =   15983361
+#                11347	Flags:	F = 0	E = 0	AF = 1	AE = 0	din =          0	dout =  114806029
+#                11643	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout =  992211318
+#                11939	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout =  512609597
+#                12235	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout = 1993627629
+#                12531	Flags:	F = 0	E = 0	AF = 0	AE = 0	din =          0	dout = 1177417612
+#                12827	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          0	dout =          1
+#                13123	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          0	dout =          1
+#                13419	Flags:	F = 0	E = 1	AF = 0	AE = 1	din =          0	dout =          1
+# ** Note: $stop    : async_fifo_tb.sv(142)
+#    Time: 13600 ns  Iteration: 1  Instance: /custom_async_fifo_tb
+# Break in Module custom_async_fifo_tb at async_fifo_tb.sv line 142
+# Stopped at async_fifo_tb.sv line 142
+# End time: 21:49:44 on May 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
