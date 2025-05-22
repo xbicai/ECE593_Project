@@ -1,7 +1,7 @@
 vlib work
 
 # Compile async_fifo
-vlog -f async_fifo.list
+vlog -f ./async_fifo.list
 
 # Compile Environment
 #vlog -f env.list
@@ -14,7 +14,7 @@ vlog -f async_fifo.list
 #vsim work.custom_async_fifo_tb -c
 #vsim -voptargs=+acc work.custom_async_fifo_tb
 
-vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M2_tb_transcript
+vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M3_tb_transcript
 #vsim -c custom_async_fifo_tb -voptargs="+acc"
 
 #add wave -r *
@@ -22,6 +22,6 @@ vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile .
 
 run -all
 
-coverage report -details -code bcesft -output ../docs/M2_coverage.rpt
+coverage report -details -code bcesft -output ../docs/M3_coverage.rpt
 
 exit

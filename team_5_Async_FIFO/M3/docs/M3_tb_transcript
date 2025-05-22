@@ -1,0 +1,437 @@
+# vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M3_tb_transcript 
+# Start time: 20:09:41 on May 21,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.intf(fast)
+# Loading work.new_proj_pkg(fast)
+# Loading work.async_fifo_tb_sv_unit(fast)
+# Loading work.custom_async_fifo_tb(fast)
+# Loading work.intf(fast__2)
+# Loading work.custom_async_fifo(fast)
+# Loading work.custom_sync_r2w(fast)
+# Loading work.custom_sync_w2r(fast)
+# Loading work.custom_fifomem(fast)
+# Loading work.custom_rptr_empty(fast)
+# Loading work.custom_wptr_full(fast)
+# Loading work.test(fast)
+#                    0	reset started
+#                    5	reset ended
+#                    5	Generator started
+#                    5	Generator completed
+# driver started
+# 
+# monitor_wr started
+# monitor_rd started
+# SCOREBOARD SIZE:          4, DEPTH:          4
+# 
+#                   63	Scoreboard - WR_Input -  4
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                   77	Scoreboard - WR_Input -  9
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                   91	Scoreboard - WR_Input - 15
+#                  100	Scoreboard - RD_Input -  4
+#                  110	Scoreboard - RD_Input -  9
+#                  119	Scoreboard - WR_Input -  9
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  147	Scoreboard - WR_Input - 14
+#                  160	Scoreboard - RD_Input - 15
+#                  161	Scoreboard - WR_Input -  5
+#                  200	Scoreboard - RD_Input -  9
+#                  203	Scoreboard - WR_Input - 15
+#                  220	Scoreboard - RD_Input - 14
+#                  230	Scoreboard - RD_Input -  5
+#                  231	Scoreboard - WR_Input -  8
+#                  240	Scoreboard - RD_Input - 15
+#                  245	Scoreboard - WR_Input -  6
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  259	Scoreboard - WR_Input -  2
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  270	Scoreboard - RD_Input -  8
+#                  300	Scoreboard - RD_Input -  6
+#                  315	Scoreboard - WR_Input - 14
+#                  320	Scoreboard - RD_Input -  2
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  343	Scoreboard - WR_Input -  5
+#                  350	Scoreboard - RD_Input - 14
+#                  357	Scoreboard - WR_Input -  7
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  385	Scoreboard - WR_Input -  7
+#                  390	Scoreboard - RD_Input -  5
+#                  410	Scoreboard - RD_Input -  7
+#                  413	Scoreboard - WR_Input -  7
+#                  440	Scoreboard - RD_Input -  7
+#                  455	Scoreboard - WR_Input -  1
+#                  480	Scoreboard - RD_Input -  7
+#                  497	Scoreboard - WR_Input -  6
+#                  511	Scoreboard - WR_Input - 11
+#                  520	Scoreboard - RD_Input -  1
+#                  525	Scoreboard - WR_Input -  0
+#                  530	Scoreboard - RD_Input -  6
+#                  539	Scoreboard - WR_Input -  1
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  553	Scoreboard - WR_Input - 11
+#                  560	Scoreboard - RD_Input - 11
+#                  567	Scoreboard - WR_Input -  0
+#                  570	Scoreboard - RD_Input -  0
+#                  581	Scoreboard - WR_Input -  4
+#                  590	Scoreboard - RD_Input -  1
+#                  600	Scoreboard - RD_Input - 11
+#                  610	Scoreboard - RD_Input -  0
+#                  620	Scoreboard - RD_Input -  4
+#                  651	Scoreboard - WR_Input -  5
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  679	Scoreboard - WR_Input -  7
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  700	Scoreboard - RD_Input -  5
+#                  707	Scoreboard - WR_Input - 11
+#                  710	Scoreboard - RD_Input -  7
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  749	Scoreboard - WR_Input -  0
+#                  770	Scoreboard - RD_Input - 11
+#                  790	Scoreboard - RD_Input -  0
+#                  805	Scoreboard - WR_Input - 13
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  819	Scoreboard - WR_Input -  4
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  861	Scoreboard - WR_Input -  5
+#                  870	Scoreboard - RD_Input - 13
+#                  880	Scoreboard - RD_Input -  4
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  903	Scoreboard - WR_Input - 11
+#                  917	Scoreboard - WR_Input - 13
+#                  920	Scoreboard - RD_Input -  5
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  931	Scoreboard - WR_Input -  1
+#                  945	Scoreboard - WR_Input - 12
+#                  950	Scoreboard - RD_Input - 11
+#                  959	Scoreboard - WR_Input - 14
+#                  960	Scoreboard - RD_Input - 13
+#                  970	Scoreboard - RD_Input -  1
+#                  990	Scoreboard - RD_Input - 12
+#                 1000	Scoreboard - RD_Input - 14
+#                 1001	Scoreboard - WR_Input -  9
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                 1015	Scoreboard - WR_Input -  7
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                 1029	Scoreboard - WR_Input -  6
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                 1057	Scoreboard - WR_Input - 11
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1071	Scoreboard - WR_Input -  8
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1127	Scoreboard - WR_Input - 13
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1155	Scoreboard - WR_Input -  4
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1197	Scoreboard - WR_Input -  5
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1211	Scoreboard - WR_Input - 13
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1225	Scoreboard - WR_Input -  6
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1239	Scoreboard - WR_Input - 13
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1253	Scoreboard - WR_Input -  5
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1267	Scoreboard - WR_Input - 12
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1281	Scoreboard - WR_Input -  8
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1309	Scoreboard - WR_Input - 14
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1323	Scoreboard - WR_Input -  7
+# gen.tx_count:         100, drive.tx_count_wr:         100, drive.tx_count_rd:         100, mon.tx_count_wr:        100
+# tests are finished
+# 
+# ** Note: $stop    : ./async_fifo/sim/env.sv(75)
+#    Time: 1393 ns  Iteration: 2  Instance: /custom_async_fifo_tb/test
+# Break in Task new_proj_pkg/environment::run at ./async_fifo/sim/env.sv line 75
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 20:15:08 on May 21,2025
+# vlog -reportprogress 300 -f ./async_fifo.list 
+# -- Compiling module custom_fifomem
+# -- Compiling module custom_rptr_empty
+# -- Compiling module custom_sync_r2w
+# -- Compiling module custom_sync_w2r
+# -- Compiling module custom_wptr_full
+# -- Compiling module custom_async_fifo
+# -- Compiling package new_proj_pkg
+# -- Compiling interface intf
+# -- Compiling package async_fifo_tb_sv_unit
+# -- Importing package new_proj_pkg
+# -- Compiling module test
+# -- Compiling module custom_async_fifo_tb
+# 
+# Top level modules:
+# 	custom_async_fifo_tb
+# End time: 20:15:08 on May 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:15:09 on May 21,2025, Elapsed time: 0:05:28
+# Errors: 0, Warnings: 0
+# vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M3_tb_transcript 
+# Start time: 20:15:09 on May 21,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: ./async_fifo_tb.sv(48): (vopt-2685) [TFMPC] - Too few port connections for 'iDUT'.  Expected 12, found 10.
+# ** Warning: ./async_fifo_tb.sv(48): (vopt-2718) [TFMPC] - Missing connection for port 'fifo_almost_empty'.
+# ** Warning: ./async_fifo_tb.sv(48): (vopt-2718) [TFMPC] - Missing connection for port 'fifo_almost_full'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.intf(fast)
+# Loading work.new_proj_pkg(fast)
+# Loading work.async_fifo_tb_sv_unit(fast)
+# Loading work.custom_async_fifo_tb(fast)
+# Loading work.intf(fast__2)
+# Loading work.custom_async_fifo(fast)
+# Loading work.custom_sync_r2w(fast)
+# Loading work.custom_sync_w2r(fast)
+# Loading work.custom_fifomem(fast)
+# Loading work.custom_rptr_empty(fast)
+# Loading work.custom_wptr_full(fast)
+# Loading work.test(fast)
+#                    0	reset started
+#                    5	reset ended
+#                    5	Generator started
+#                    5	Generator completed
+# driver started
+# 
+# monitor_wr started
+# monitor_rd started
+# SCOREBOARD SIZE:          8, DEPTH:          4
+# 
+#                   63	Scoreboard - WR_Input -  37
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                   77	Scoreboard - WR_Input - 189
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                   91	Scoreboard - WR_Input -  31
+#                  100	Scoreboard - RD_Input -  37
+#                  110	Scoreboard - RD_Input - 189
+#                  119	Scoreboard - WR_Input -  92
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  147	Scoreboard - WR_Input - 119
+#                  160	Scoreboard - RD_Input -  31
+#                  161	Scoreboard - WR_Input -  67
+#                  200	Scoreboard - RD_Input -  92
+#                  203	Scoreboard - WR_Input - 148
+#                  220	Scoreboard - RD_Input - 119
+#                  230	Scoreboard - RD_Input -  67
+#                  231	Scoreboard - WR_Input -  37
+#                  240	Scoreboard - RD_Input - 148
+#                  245	Scoreboard - WR_Input - 177
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  259	Scoreboard - WR_Input - 103
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  270	Scoreboard - RD_Input -  37
+#                  300	Scoreboard - RD_Input - 177
+#                  315	Scoreboard - WR_Input - 176
+#                  320	Scoreboard - RD_Input - 103
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  343	Scoreboard - WR_Input -  84
+#                  350	Scoreboard - RD_Input - 176
+#                  357	Scoreboard - WR_Input -  34
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  385	Scoreboard - WR_Input -  49
+#                  390	Scoreboard - RD_Input -  84
+#                  410	Scoreboard - RD_Input -  34
+#                  413	Scoreboard - WR_Input -  22
+#                  440	Scoreboard - RD_Input -  49
+#                  455	Scoreboard - WR_Input - 249
+#                  480	Scoreboard - RD_Input -  22
+#                  497	Scoreboard - WR_Input - 105
+#                  511	Scoreboard - WR_Input - 213
+#                  520	Scoreboard - RD_Input - 249
+#                  525	Scoreboard - WR_Input -  34
+#                  530	Scoreboard - RD_Input - 105
+#                  539	Scoreboard - WR_Input - 102
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  553	Scoreboard - WR_Input - 248
+#                  560	Scoreboard - RD_Input - 213
+#                  567	Scoreboard - WR_Input -  26
+#                  570	Scoreboard - RD_Input -  34
+#                  581	Scoreboard - WR_Input -  21
+#                  590	Scoreboard - RD_Input - 102
+#                  600	Scoreboard - RD_Input - 248
+#                  610	Scoreboard - RD_Input -  26
+#                  620	Scoreboard - RD_Input -  21
+#                  651	Scoreboard - WR_Input - 142
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  679	Scoreboard - WR_Input - 163
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  700	Scoreboard - RD_Input - 142
+#                  707	Scoreboard - WR_Input - 238
+#                  710	Scoreboard - RD_Input - 163
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  749	Scoreboard - WR_Input - 240
+#                  770	Scoreboard - RD_Input - 238
+#                  790	Scoreboard - RD_Input - 240
+#                  805	Scoreboard - WR_Input - 215
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  819	Scoreboard - WR_Input -  66
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  861	Scoreboard - WR_Input - 164
+#                  870	Scoreboard - RD_Input - 215
+#                  880	Scoreboard - RD_Input -  66
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  903	Scoreboard - WR_Input - 143
+#                  917	Scoreboard - WR_Input - 172
+#                  920	Scoreboard - RD_Input - 164
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  931	Scoreboard - WR_Input - 123
+#                  945	Scoreboard - WR_Input - 189
+#                  950	Scoreboard - RD_Input - 143
+#                  959	Scoreboard - WR_Input -   8
+#                  960	Scoreboard - RD_Input - 172
+#                  970	Scoreboard - RD_Input - 123
+#                  990	Scoreboard - RD_Input - 189
+#                 1000	Scoreboard - RD_Input -   8
+#                 1001	Scoreboard - WR_Input -  47
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                 1015	Scoreboard - WR_Input - 254
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                 1029	Scoreboard - WR_Input - 153
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                 1057	Scoreboard - WR_Input - 120
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1071	Scoreboard - WR_Input - 219
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1127	Scoreboard - WR_Input - 126
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1155	Scoreboard - WR_Input - 125
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1197	Scoreboard - WR_Input - 142
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1211	Scoreboard - WR_Input - 174
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1225	Scoreboard - WR_Input - 100
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1239	Scoreboard - WR_Input - 231
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1253	Scoreboard - WR_Input - 196
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1267	Scoreboard - WR_Input - 206
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1281	Scoreboard - WR_Input -  85
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1309	Scoreboard - WR_Input -  80
+# ERROR full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                 1323	Scoreboard - WR_Input - 114
+# gen.tx_count:         100, drive.tx_count_wr:         100, drive.tx_count_rd:         100, mon.tx_count_wr:        100
+# tests are finished
+# 
+# ** Note: $stop    : ./async_fifo/sim/env.sv(75)
+#    Time: 1393 ns  Iteration: 2  Instance: /custom_async_fifo_tb/test
+# Break in Task new_proj_pkg/environment::run at ./async_fifo/sim/env.sv line 75

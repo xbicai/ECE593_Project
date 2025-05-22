@@ -5,7 +5,7 @@
 ./async_fifo/rtl/wptr_full.sv
 ./async_fifo/rtl/top.sv
 
-./async_fifo/sim/async_fifo_interface.sv
+#./async_fifo/sim/async_fifo_interface.sv
 ./async_fifo/sim/package.sv
 
 ./async_fifo_tb.sv
