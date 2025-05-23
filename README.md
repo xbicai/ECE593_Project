@@ -32,6 +32,11 @@ We are tasked with verifying a design of our choice using a variety of different
 - [ ] Add a section for UVM Verification plan and add details on UVM architecture, UVM hierarchy, UVM compoennts (sequence, sequencer, driver, monitor, scorebaord, interfaces with DUT< number of agents planned, etc.)
 - [ ] Utilizing UVM_MESSAGING, UVM_LOGGING mechanisms to create and log the reports and data
 
+**Milestone 5:**
+- [ ] Finalize UVM testbench
+- [ ] Implement covergroups, assertions, etc. for functional coverage
+- [ ] Achieve 100% Code and Functional Coverage
+
 ## Asynchronous FIFO Buffer Design
 Our design is based on a asnychronous fifo introduced in class with the following features. 
 
