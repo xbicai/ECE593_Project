@@ -1,73 +1,65 @@
+
+// `include "uvm_macros.svh"
+
+// import uvm_pkg::*;
+
 import new_proj_pkg::*;
 
-
 module custom_async_fifo_tb;
-	// Parameters
-	parameter W_CYCLE = 15; 	// X time steps
-	parameter R_CYCLE = 10;		// Initial testing will have R and W have the same clocks but shifted slightly
-	parameter CLK_SHIFT = 5;
-	parameter SIZE 	= 32;
-	parameter DEPTH = 4;
+    parameter W_CYCLE = 15;
+    parameter R_CYCLE = 10;
+    parameter CLK_SHIFT = 5;
+    parameter SIZE     = 8;
+    parameter DEPTH    = 4;
 
-	// DUT Inputs
-	logic wclk, rclk, ainit;	// Clocks and reset
+    logic wclk, rclk, ainit;
 
-	// Class Based Testbench
-	intf _intf(
-		.clk_wr	(wclk),
-		.clk_rd	(rclk),
-		.ainit	(ainit)
-	);
+    async_fifo_intf #(SIZE) _intf (
+        .clk_wr(wclk),
+        .clk_rd(rclk),
+        .ainit(ainit)
+    );
 
-	test test;
+    test test;
 
-	// DUT instantiation
-	custom_async_fifo #(SIZE, DEPTH) iDUT (		// Test that Parameters work (defaults are 8, 4)
-		.din		(_intf.data_wr),
-		.dout		(_intf.data_rd),
-		.fifo_full	(_intf.full_flag),
-		.fifo_empty	(_intf.empty_flag),
-		.wen		(_intf.req_wr),
-		.wclk_i		(wclk),
-		.wrst_n_i	(ainit),
-		.ren		(_intf.req_rd),
-		.rclk_i		(rclk),
-		.rrst_n_i	(ainit)
-	);
+    custom_async_fifo #(.DATASIZE(SIZE), .ADDRSIZE(DEPTH)) iDUT (
+        .din               (_intf.data_wr),
+        .dout              (_intf.data_rd),
+        .fifo_full         (_intf.fifo_full),
+        .fifo_empty        (_intf.fifo_empty),
+        .fifo_almost_full  (_intf.fifo_almost_full),
+        .fifo_almost_empty (_intf.fifo_almost_empty),
+        .wen               (_intf.req_wr),
+        .wclk_i            (wclk),
+        .wrst_n_i          (ainit),
+        .ren               (_intf.req_rd),
+        .rclk_i            (rclk),
+        .rrst_n_i          (ainit)
+    );
 
+    initial begin
+        wclk = 0;
+        forever #(W_CYCLE / 2) wclk = ~wclk;
+    end
 
-	// Generate Clocks
-	initial begin
-		wclk <= 0;
-		// rclk <= 0;
-		forever #(W_CYCLE/2) wclk = ~wclk;
-		// #(CLK_SHIFT)
-		// forever #(R_CYCLE/2) rclk = ~rclk;	// rclk shifted 1/4 clk from wclk
-	end
+    initial begin
+        rclk = 0;
+        #(CLK_SHIFT);
+        forever #(R_CYCLE / 2) rclk = ~rclk;
+    end
 
-	initial begin
-		rclk <= 0;
-		#(CLK_SHIFT)
-		forever #(R_CYCLE/2) rclk = ~rclk;	// rclk shifted 1/4 clk from wclk
-	end
-
-	// Testbench Initialization
-	initial begin
-		test = new;
-		test.env.intf = _intf;
-		test.env.tx_count_wr = 10;
-		test.env.tx_count_rd = 10;
-		ainit 		= 0;
-		
-		#20 		
-		fork
-			test.run();
-			#20 ainit = 1;
-		join_any;
-
-
-		#2000 $finish;
-	end
-
-
-endmodule : custom_async_fifo_tb
+    initial begin
+        test = new;
+        test.env.intf = _intf;
+        test.env.tx_count_wr = 10;
+        test.env.tx_count_rd = 10;
+        uvm_config_db#(virtual async_fifo_intf)::set(null, "*", "v_intf", _intf);
+        ainit = 0;
+        #20;
+        fork
+            test.run();
+            #20 ainit = 1;
+        join_any;
+        #2000 $finish;
+    end
+endmodule

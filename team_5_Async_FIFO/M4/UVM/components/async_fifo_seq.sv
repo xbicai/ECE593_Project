@@ -1,42 +1,18 @@
-class async_fifo_seq extends uvm_sequence #(
-	parameter dw = 32
-);
-	//------------------------------------------------------------
-	// UVM Factory Registration
-	//------------------------------------------------------------
-	`uvm_object_utils(async_fifo_seq)
 
-	//------------------------------------------------------------
-	// Instantiate Packet Handle
-	//------------------------------------------------------------
-	async_fifo_pkt pkt;
+class async_fifo_seq extends uvm_sequence #(async_fifo_pkt);
+  `uvm_object_utils(async_fifo_seq)
 
-	//------------------------------------------------------------
-	// Standard UVM Constructor
-	//------------------------------------------------------------
-	function new (string name = "async_fifo_seq");
-		super.new(name);
-		`uvm_info("PKT_SEQ", "Inside Constructor!", UVM_HIGH)
-	endfunction
+  function new(string name = "async_fifo_seq");
+    super.new(name);
+  endfunction
 
-	
-	//------------------------------------------------------------
-	// Sequence Tasks
-	//------------------------------------------------------------
-	task body ();
-		// Create the UVM Factory object
-		pkt = async_fifo_pkt::type_id::create("async_fifo_pkt");
-
-		repeat (2) begin
-			start_item(pkt);
-			void'(pkt.randomize() with {reset == 1;});
-			finish_item(pkt);
-		end
-
-		repeat (5) begin
-			start_item(pkt);
-			void'(pkt.randomize() with {reset == 0;});
-			finish_item(pkt);
-		end
-	endtask
-endclass : async_fifo_seq
+  virtual task body();
+    async_fifo_pkt pkt;
+    repeat (20) begin
+      pkt = async_fifo_pkt::type_id::create("pkt");
+      start_item(pkt);
+      assert(pkt.randomize());
+      finish_item(pkt);
+    end
+  endtask
+endclass

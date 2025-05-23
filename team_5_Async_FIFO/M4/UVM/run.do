@@ -7,7 +7,7 @@ vlog -f async_fifo_dut.list
 
 ## Compile Testbench
 vlog async_fifo_interface.sv
-#vlog async_fifo_package.sv
+vlog async_fifo_package.sv
 vlog async_fifo_tb.sv
 
 ## Simulate Testbench

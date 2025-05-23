@@ -1,0 +1,48 @@
+# do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:37:48 on May 22,2025
+# vlog -f async_fifo_dut.list 
+# -- Compiling module custom_fifomem
+# -- Compiling module custom_rptr_empty
+# -- Compiling module custom_sync_r2w
+# -- Compiling module custom_sync_w2r
+# -- Compiling module custom_wptr_full
+# -- Compiling module custom_async_fifo
+# 
+# Top level modules:
+# 	custom_async_fifo
+# End time: 21:37:48 on May 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:37:48 on May 22,2025
+# vlog async_fifo_interface.sv 
+# -- Compiling interface async_fifo_intf
+# 
+# Top level modules:
+# 	--none--
+# End time: 21:37:48 on May 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:37:48 on May 22,2025
+# vlog async_fifo_package.sv 
+# -- Compiling package new_proj_pkg
+# ** Note: (vlog-2286) async_fifo_package.sv(3): Using implicit +incdir+/pkgs/mentor/questa/10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# 
+# Top level modules:
+# 	--none--
+# End time: 21:37:49 on May 22,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:37:49 on May 22,2025
+# vlog async_fifo_tb.sv 
+# ** Error: async_fifo_tb.sv(56): (vlog-2730) Undefined variable: 'uvm_config_db'.
+# ** Error: (vlog-13069) async_fifo_tb.sv(56): near "#": syntax error, unexpected '#'.
+# End time: 21:37:49 on May 22,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /pkgs/mentor/questa/10.6b/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 11
+# /pkgs/mentor/questa/10.6b/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog async_fifo_tb.sv"

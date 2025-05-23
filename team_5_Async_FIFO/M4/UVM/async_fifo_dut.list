@@ -1,6 +1,6 @@
-../CLASS/async_fifo/rtl/fifomem.sv
-../CLASS/async_fifo/rtl/rptr_empty.sv
-../CLASS/async_fifo/rtl/sync_r2w.sv
-../CLASS/async_fifo/rtl/sync_w2r.sv
-../CLASS/async_fifo/rtl/wptr_full.sv
-../CLASS/async_fifo/rtl/top.sv
+../CLASS/async_fifo/fifomem.sv
+../CLASS/async_fifo/rptr_empty.sv
+../CLASS/async_fifo/sync_r2w.sv
+../CLASS/async_fifo/sync_w2r.sv
+../CLASS/async_fifo/wptr_full.sv
+../CLASS/async_fifo/top.sv
