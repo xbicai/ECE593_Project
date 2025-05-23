@@ -22,10 +22,14 @@ class generator#(parameter SIZE = 8, DEPTH = 4);
 
     task main ();
         $display($time, "\tGenerator started");
-        // test 1: simple repeated random input along with random requests
+        
+        
+        // test repeat: simple repeated random input along with random requests
         repeat(tx_count) begin
             tx_wr = new();              // generating random input and random requests
             tx_rd = new();
+            tx_wr.constraint_mode(0);
+            tx_rd.constraint_mode(0);
             assert (tx_wr.randomize());    // check if successful
             assert (tx_rd.randomize());
             gen2drive_wr.put(tx_wr);    // sending new write and read requests to driver
@@ -35,6 +39,38 @@ class generator#(parameter SIZE = 8, DEPTH = 4);
         -> ended;
     endtask
 
-    
+/*     // simple write -> read
+    task test1();
+        $display($time, "\tTest 1: Standard write followed by read");
+        create_transaction(tx_wr, tx_rd);
+        tx_wr.data_wr = 1'b1;
+        tx_wr.req_wr = 1'b1;
+        send_transaction(tx_wr, tx_rd);
+    endtask
+    // filling FIFO to max depth
+    task test2();
+        $display($time, "\tTest 2: Fill");
+        create_transaction(tx_wr, tx_rd);
+        tx_wr.constraint_select("max");
+        tx_rd.constraint_select("zero");
+
+    endtask
+    task test3();
+
+    endtask
+    task test4();
+
+    endtask
+    task test5();
+
+    endtask
+    task create_transaction(output transaction_wr tx_wr, output transaction_rd tx_rd);
+        tx_wr = new();
+        tx_rd = new();
+    endtask
+    task send_transaction(transaction_wr tx_wr, transaction_rd tx_rd);
+        gen2drive_wr.put(tx_wr);
+        gen2drive_rd.put(tx_rd);
+    endtask */
 
 endclass : generator

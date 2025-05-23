@@ -25,7 +25,7 @@ class driver#(parameter SIZE = 8, DEPTH = 4);
         $display($time, "\treset started");
         vif.req_wr  <= 0;
         vif.req_rd  <= 0;
-        vif.full_flag <= 0;
+        vif.full_flag <= 1;
         vif.empty_flag <= 1;
         vif.data_wr <= 0;
         wait(vif.ainit);    // Wait for ainit to be high to exit
