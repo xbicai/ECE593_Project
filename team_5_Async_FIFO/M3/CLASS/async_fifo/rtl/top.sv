@@ -1,4 +1,6 @@
-module custom_async_fifo (
+module custom_async_fifo #(
+  parameter SIZE = 8, DEPTH = 4
+) (
   wen, wclk_i, wrst_n_i,
   ren, rclk_i, rrst_n_i,
   din,
@@ -8,8 +10,8 @@ module custom_async_fifo (
   fifo_almost_full,
   fifo_almost_empty
 );
-  parameter DATASIZE = 8;
-  parameter ADDRSIZE = 4;
+  parameter DATASIZE = SIZE;
+  parameter ADDRSIZE = DEPTH;
 
   input  wen, wclk_i, wrst_n_i;
   input  ren, rclk_i, rrst_n_i;

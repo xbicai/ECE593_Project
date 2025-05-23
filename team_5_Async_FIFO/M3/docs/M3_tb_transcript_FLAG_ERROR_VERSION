@@ -1,0 +1,391 @@
+// this transcript is from a version with more robusts tests implemented, but the flag error messed them all up, so we decided to revert back to a version with only repeated random tests which demonstrates the functionallity of our DUT better
+
+
+
+
+
+# vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesft" -logfile ../docs/M3_tb_transcript 
+# Start time: 23:16:46 on May 22,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.intf(fast)
+# Loading work.new_proj_pkg(fast)
+# Loading work.async_fifo_tb_sv_unit(fast)
+# Loading work.custom_async_fifo_tb(fast)
+# Loading work.intf(fast__2)
+# Loading work.custom_async_fifo(fast)
+# Loading work.custom_sync_r2w(fast)
+# Loading work.custom_sync_w2r(fast)
+# Loading work.custom_fifomem(fast)
+# Loading work.custom_rptr_empty(fast)
+# Loading work.custom_wptr_full(fast)
+# Loading work.test(fast)
+#                    0	reset started
+#                    5	reset ended
+#                    5	Generator started
+#                    5	Test 1: Standard write followed by read
+#                    5	Test 2: Fill
+#                    5	Test 3: Write when full
+#                    5	Test 4: Drain
+#                    5	Test 5: Read when empty
+#                    5	Test Repeat: repeating random values
+#                    5	Generator completed
+# driver started
+# 
+# monitor_wr started
+# monitor_rd started
+# SCOREBOARD SIZE:          8, DEPTH:          4
+# 
+# Starting get_wr
+# Starting get_rd
+#                   10	Scoreboard - WR_Input -   0
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  110	read output mismatch: scoreboard read data: 0, DUT read data: 1
+# 
+#                  110	Scoreboard - RD_Input -   1
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 1, DUT empty_flag: 0
+# 
+# ERROR: local FIFO is empty but DUT empty flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 1, DUT empty_flag: 0
+# 
+# ERROR: local FIFO is empty but DUT empty flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 1, DUT empty_flag: 0
+# 
+# ERROR: local FIFO is empty but DUT empty flag is not raised
+# 
+#                  190	Scoreboard - WR_Input -  87
+#                  190	read output mismatch: scoreboard read data: 57, DUT read data: c2
+# 
+#                  190	Scoreboard - RD_Input - 194
+#                  210	Scoreboard - WR_Input -  92
+#                  210	read output mismatch: scoreboard read data: 5c, DUT read data: 0
+# 
+#                  210	Scoreboard - RD_Input -   0
+#                  230	Scoreboard - WR_Input - 248
+#                  230	read output mismatch: scoreboard read data: f8, DUT read data: 0
+# 
+#                  230	Scoreboard - RD_Input -   0
+#                  250	Scoreboard - WR_Input - 119
+#                  270	Scoreboard - WR_Input -  67
+#                  270	read output mismatch: scoreboard read data: 77, DUT read data: 0
+# 
+#                  270	Scoreboard - RD_Input -   0
+#                  290	Scoreboard - WR_Input - 204
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  310	Scoreboard - WR_Input - 115
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  350	Scoreboard - WR_Input - 146
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                  410	read output mismatch: scoreboard read data: 43, DUT read data: 94
+# 
+#                  410	Scoreboard - RD_Input - 148
+#                  430	Scoreboard - WR_Input -  52
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                  450	Scoreboard - WR_Input -  32
+#                  450	read output mismatch: scoreboard read data: cc, DUT read data: 25
+# 
+#                  450	Scoreboard - RD_Input -  37
+#                  470	Scoreboard - WR_Input - 110
+#                  470	read output mismatch: scoreboard read data: 73, DUT read data: b1
+# 
+#                  470	Scoreboard - RD_Input - 177
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                  490	read output mismatch: scoreboard read data: 92, DUT read data: 67
+# 
+#                  490	Scoreboard - RD_Input - 103
+#                  510	Scoreboard - WR_Input -  48
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                  570	Scoreboard - WR_Input - 230
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                  590	read output mismatch: scoreboard read data: 34, DUT read data: b0
+# 
+#                  590	Scoreboard - RD_Input - 176
+#                  610	Scoreboard - WR_Input -  18
+#                  610	read output mismatch: scoreboard read data: 20, DUT read data: 54
+# 
+#                  610	Scoreboard - RD_Input -  84
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                  630	read output mismatch: scoreboard read data: 6e, DUT read data: 22
+# 
+#                  630	Scoreboard - RD_Input -  34
+#                  650	Scoreboard - WR_Input -  54
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                  670	Scoreboard - WR_Input - 200
+#                  670	read output mismatch: scoreboard read data: 30, DUT read data: 31
+# 
+#                  670	Scoreboard - RD_Input -  49
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+#                  710	Scoreboard - WR_Input -  64
+#                  730	Scoreboard - WR_Input - 102
+#                  730	read output mismatch: scoreboard read data: e6, DUT read data: 16
+# 
+#                  730	Scoreboard - RD_Input -  22
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                  770	read output mismatch: scoreboard read data: 12, DUT read data: f9
+# 
+#                  770	Scoreboard - RD_Input - 249
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                  830	read output mismatch: scoreboard read data: 36, DUT read data: 69
+# 
+#                  830	Scoreboard - RD_Input - 105
+#                  890	Scoreboard - WR_Input -  43
+# ERROR: full_flag mismatch, scoreboard full_flag: 1, DUT full_flag: 0
+# 
+#                  910	Scoreboard - WR_Input -  15
+#                  910	read output mismatch: scoreboard read data: c8, DUT read data: d5
+# 
+#                  910	Scoreboard - RD_Input - 213
+#                  930	Scoreboard - WR_Input - 217
+#                  950	Scoreboard - WR_Input -  60
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                  990	Scoreboard - WR_Input -  28
+#                  990	read output mismatch: scoreboard read data: 40, DUT read data: 22
+# 
+#                  990	Scoreboard - RD_Input -  34
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1010	Scoreboard - RD_Input - 102
+#                 1030	Scoreboard - WR_Input - 213
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1070	Scoreboard - WR_Input -   1
+#                 1070	read output mismatch: scoreboard read data: 2b, DUT read data: f8
+# 
+#                 1070	Scoreboard - RD_Input - 248
+#                 1090	Scoreboard - WR_Input - 167
+#                 1090	read output mismatch: scoreboard read data: f, DUT read data: 1a
+# 
+#                 1090	Scoreboard - RD_Input -  26
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1130	Scoreboard - WR_Input - 104
+#                 1130	read output mismatch: scoreboard read data: d9, DUT read data: 15
+# 
+#                 1130	Scoreboard - RD_Input -  21
+#                 1150	Scoreboard - WR_Input - 186
+#                 1150	read output mismatch: scoreboard read data: 3c, DUT read data: 8e
+# 
+#                 1150	Scoreboard - RD_Input - 142
+#                 1170	Scoreboard - WR_Input - 210
+#                 1170	read output mismatch: scoreboard read data: 1c, DUT read data: a3
+# 
+#                 1170	Scoreboard - RD_Input - 163
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1190	read output mismatch: scoreboard read data: d5, DUT read data: ee
+# 
+#                 1190	Scoreboard - RD_Input - 238
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1230	Scoreboard - WR_Input -  47
+#                 1230	read output mismatch: scoreboard read data: 1, DUT read data: f0
+# 
+#                 1230	Scoreboard - RD_Input - 240
+#                 1250	Scoreboard - WR_Input - 112
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1290	Scoreboard - WR_Input - 144
+#                 1310	Scoreboard - WR_Input - 217
+#                 1310	read output mismatch: scoreboard read data: a7, DUT read data: d7
+# 
+#                 1310	Scoreboard - RD_Input - 215
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1350	read output mismatch: scoreboard read data: 68, DUT read data: 42
+# 
+#                 1350	Scoreboard - RD_Input -  66
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1370	read output mismatch: scoreboard read data: ba, DUT read data: a4
+# 
+#                 1370	Scoreboard - RD_Input - 164
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: empty_flag mismatch, scoreboard empty_flag: 0, DUT empty_flag: 1
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1410	read output mismatch: scoreboard read data: d2, DUT read data: 8f
+# 
+#                 1410	Scoreboard - RD_Input - 143
+#                 1430	Scoreboard - WR_Input - 107
+#                 1450	Scoreboard - WR_Input - 215
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1490	read output mismatch: scoreboard read data: 2f, DUT read data: ac
+# 
+#                 1490	Scoreboard - RD_Input - 172
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1530	Scoreboard - WR_Input - 218
+#                 1530	read output mismatch: scoreboard read data: 70, DUT read data: 7b
+# 
+#                 1530	Scoreboard - RD_Input - 123
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1550	read output mismatch: scoreboard read data: 90, DUT read data: bd
+# 
+#                 1550	Scoreboard - RD_Input - 189
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1590	Scoreboard - WR_Input - 225
+#                 1610	Scoreboard - WR_Input -   5
+#                 1630	Scoreboard - WR_Input - 152
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1670	Scoreboard - WR_Input -  44
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1690	read output mismatch: scoreboard read data: d9, DUT read data: 8
+# 
+#                 1690	Scoreboard - RD_Input -   8
+#                 1710	Scoreboard - WR_Input - 170
+#                 1710	read output mismatch: scoreboard read data: 6b, DUT read data: 2f
+# 
+#                 1710	Scoreboard - RD_Input -  47
+#                 1730	Scoreboard - WR_Input - 245
+#                 1730	read output mismatch: scoreboard read data: d7, DUT read data: fe
+# 
+#                 1730	Scoreboard - RD_Input - 254
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1790	read output mismatch: scoreboard read data: da, DUT read data: 99
+# 
+#                 1790	Scoreboard - RD_Input - 153
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1850	read output mismatch: scoreboard read data: e1, DUT read data: 78
+# 
+#                 1850	Scoreboard - RD_Input - 120
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1870	read output mismatch: scoreboard read data: 5, DUT read data: db
+# 
+#                 1870	Scoreboard - RD_Input - 219
+#                 1890	Scoreboard - WR_Input - 251
+#                 1890	read output mismatch: scoreboard read data: 98, DUT read data: 7e
+# 
+#                 1890	Scoreboard - RD_Input - 126
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+# ERROR: local FIFO is full but DUT full flag is not raised
+# 
+#                 1930	read output mismatch: scoreboard read data: 2c, DUT read data: 7d
+# 
+#                 1930	Scoreboard - RD_Input - 125
+#                 1950	read output mismatch: scoreboard read data: aa, DUT read data: 8e
+# 
+#                 1950	Scoreboard - RD_Input - 142
+# gen.tx_count:         100, drive.tx_count_wr:         100, drive.tx_count_rd:         100, mon.tx_count_wr:        100
+# tests are finished
+# 
+# ** Note: $stop    : ./async_fifo/sim/env.sv(75)
+#    Time: 1990 ns  Iteration: 2  Instance: /custom_async_fifo_tb/test
+# Break in Task new_proj_pkg/environment::run at ./async_fifo/sim/env.sv line 75
+# Stopped at ./async_fifo/sim/env.sv line 75
+# End time: 23:16:48 on May 22,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
