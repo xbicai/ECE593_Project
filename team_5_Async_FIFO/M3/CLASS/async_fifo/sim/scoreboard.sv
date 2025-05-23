@@ -40,19 +40,23 @@ class scoreboard #(parameter SIZE = 8, DEPTH = 4);
 
             // check full flag
             if (tx_wr.full_flag != full_local) begin
-                $display("ERROR full_flag mismatch, scoreboard full_flag: %d, DUT full_flag: %d\n", full_local, tx_wr.full_flag);
+                $display("ERROR: full_flag mismatch, scoreboard full_flag: %d, DUT full_flag: %d\n", full_local, tx_wr.full_flag);
             end
 
             // Valid write when req high and full low
             if (tx_wr.req_wr && !tx_wr.full_flag) begin
+                if (fifo.size() >= DEPTH) begin
+                    $display("ERROR: local FIFO is full but DUT full flag is not raised\n");
+                end
+                else begin
                 lock.get();
                 fifo.push_back(tx_wr.data_wr);
                 $display($time, "\tScoreboard - WR_Input - %d", tx_wr.data_wr);
-
                 // update local flag 
                 empty_local = 1'b0;
                 if (fifo.size() == DEPTH) full_local = 1'b1;
                 lock.put();
+                end
             end
         end
 
