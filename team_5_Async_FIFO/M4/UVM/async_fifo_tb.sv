@@ -3,6 +3,7 @@
 
 // import uvm_pkg::*;
 
+// all includes and imports 
 import new_proj_pkg::*;
 
 module custom_async_fifo_tb;
@@ -13,15 +14,13 @@ module custom_async_fifo_tb;
     parameter DEPTH    = 4;
 
     logic wclk, rclk, ainit;
-
+    // interface instantiation
     async_fifo_intf #(SIZE) _intf (
         .clk_wr(wclk),
         .clk_rd(rclk),
         .ainit(ainit)
     );
-
-    test test;
-
+    // DUT instantiation
     custom_async_fifo #(.DATASIZE(SIZE), .ADDRSIZE(DEPTH)) iDUT (
         .din               (_intf.data_wr),
         .dout              (_intf.data_rd),
@@ -36,30 +35,19 @@ module custom_async_fifo_tb;
         .rclk_i            (rclk),
         .rrst_n_i          (ainit)
     );
-
+    // starting test
+    initial begin
+        run_test("test");
+    end
+    // clock generation
     initial begin
         wclk = 0;
         forever #(W_CYCLE / 2) wclk = ~wclk;
     end
-
     initial begin
         rclk = 0;
         #(CLK_SHIFT);
         forever #(R_CYCLE / 2) rclk = ~rclk;
     end
 
-    initial begin
-        test = new;
-        test.env.intf = _intf;
-        test.env.tx_count_wr = 10;
-        test.env.tx_count_rd = 10;
-        uvm_config_db#(virtual async_fifo_intf)::set(null, "*", "v_intf", _intf);
-        ainit = 0;
-        #20;
-        fork
-            test.run();
-            #20 ainit = 1;
-        join_any;
-        #2000 $finish;
-    end
 endmodule
