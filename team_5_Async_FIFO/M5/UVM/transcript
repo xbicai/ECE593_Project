@@ -1,0 +1,47 @@
+# do run.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:15:02 on May 26,2025
+# vlog -f async_fifo_dut.list 
+# -- Compiling module custom_fifomem
+# -- Compiling module custom_rptr_empty
+# -- Compiling module custom_sync_r2w
+# -- Compiling module custom_sync_w2r
+# -- Compiling module custom_wptr_full
+# -- Compiling module custom_async_fifo
+# 
+# Top level modules:
+# 	custom_async_fifo
+# End time: 21:15:02 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:15:02 on May 26,2025
+# vlog async_fifo_interface.sv 
+# -- Compiling interface async_fifo_intf
+# 
+# Top level modules:
+# 	--none--
+# End time: 21:15:02 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:15:02 on May 26,2025
+# vlog async_fifo_package.sv 
+# -- Compiling package new_proj_pkg
+# ** Note: (vlog-2286) async_fifo_package.sv(3): Using implicit +incdir+/pkgs/mentor/questa/10.6b/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# 
+# Top level modules:
+# 	--none--
+# End time: 21:15:03 on May 26,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 21:15:03 on May 26,2025
+# vlog async_fifo_tb.sv 
+# -- Compiling package async_fifo_tb_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package new_proj_pkg
+# -- Compiling module custom_async_fifo_tb
+# 
+# Top level modules:
+# 	custom_async_fifo_tb
+# End time: 21:15:03 on May 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

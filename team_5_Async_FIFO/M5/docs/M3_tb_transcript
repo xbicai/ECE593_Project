@@ -1,0 +1,96 @@
+# vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M3_tb_transcript 
+# Start time: 21:15:03 on May 26,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 10.6b linux_x86_64 May 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.async_fifo_intf(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.new_proj_pkg(fast)
+# Loading work.async_fifo_tb_sv_unit(fast)
+# Loading work.custom_async_fifo_tb(fast)
+# Loading work.async_fifo_intf(fast)
+# Loading work.custom_async_fifo(fast)
+# Loading work.custom_sync_r2w(fast)
+# Loading work.custom_sync_w2r(fast)
+# Loading work.custom_fifomem(fast)
+# Loading work.custom_rptr_empty(fast)
+# Loading work.custom_wptr_full(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /pkgs/mentor/questa/10.6b/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test test...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               test                    -     @471 
+#   env                      async_fifo_env          -     @478 
+#     agnt                   async_fifo_agnt         -     @485 
+#       drv                  async_fifo_drv          -     @508 
+#         rsp_port           uvm_analysis_port       -     @523 
+#         seq_item_port      uvm_seq_item_pull_port  -     @515 
+#       mon                  async_fifo_mon          -     @531 
+#         monitor_port       uvm_analysis_port       -     @538 
+#       sqr                  async_fifo_sqr          -     @546 
+#         rsp_export         uvm_analysis_export     -     @553 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @647 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     scb                    async_fifo_scoreboard   -     @492 
+#       scoreboard_port      uvm_analysis_imp        -     @499 
+# --------------------------------------------------------------
+# 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 780: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    5
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : /pkgs/mentor/questa/10.6b/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 780 ns  Iteration: 54  Instance: /custom_async_fifo_tb
+# End time: 21:15:07 on May 26,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
