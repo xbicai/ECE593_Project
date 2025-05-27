@@ -9,7 +9,7 @@ class async_fifo_scoreboard extends uvm_component;
 	uvm_analysis_imp #(async_fifo_pkt, async_fifo_scoreboard) scoreboard_port;
 	//   queue [7:0] ref_model;
 	async_fifo_pkt tx[$];
-	bit [7:0] ref_model[$];
+	bit [`FIFO_WIDTH-1:0] ref_model[$];
 
 	//----------------------------------------------------
 	// Standard UVM Constructor
@@ -66,7 +66,7 @@ class async_fifo_scoreboard extends uvm_component;
 	endtask
 
 	task compare(async_fifo_pkt	curr_tx);
-		`uvm_info("SCB_CLASS", "Packet Processed!", UVM_HIGH)
+		`uvm_info("SCB_CLASS", $sformatf("Packet Processed!, %d, %d", `FIFO_WIDTH, `FIFO_DEPTH), UVM_HIGH)
 
 	endtask
 endclass

@@ -13,10 +13,10 @@ class async_fifo_pkt extends uvm_sequence_item;
 	rand logic        	wr_en;
 	rand logic        	rd_en;
 	rand logic 		  	ainit;
-	rand logic [7:0]	din;
+	rand logic [`FIFO_WIDTH-1:0]	din;
 
 	// Outputs
-	logic [7:0] 	dout;
+	logic [`FIFO_WIDTH-1:0] 	dout;
 	logic 			fifo_full;
 	logic 			fifo_empty;
 	logic 			fifo_almost_full;

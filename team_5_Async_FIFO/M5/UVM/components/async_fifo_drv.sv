@@ -6,7 +6,7 @@
 class async_fifo_drv extends uvm_driver #(async_fifo_pkt);
 	`uvm_component_utils(async_fifo_drv)
 
-	virtual async_fifo_intf vif;
+	virtual async_fifo_intf #(.SIZE(`FIFO_WIDTH)) vif;
 	async_fifo_pkt pkt;
 
 	//----------------------------------------------------
@@ -23,7 +23,7 @@ class async_fifo_drv extends uvm_driver #(async_fifo_pkt);
 		super.build_phase(phase);
 		`uvm_info("DRV_CLASS", "Inside Constructor!", UVM_HIGH)
 		
-		if (!uvm_config_db#(virtual async_fifo_intf)::get(this, "*", "v_intf", vif))
+		if (!uvm_config_db#(virtual async_fifo_intf #(.SIZE(`FIFO_WIDTH)))::get(this, "*", "v_intf", vif))
 			`uvm_fatal("DRV", "Failed to get VIF from config DB");
 	endfunction
 

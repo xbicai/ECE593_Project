@@ -1,5 +1,5 @@
 # vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M3_tb_transcript "+UVM_VERBOSITY=UVM_HIGH" 
-# Start time: 11:48:22 on May 27,2025
+# Start time: 12:22:15 on May 27,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim-64
 # //  Version 10.6b linux_x86_64 May 25 2017
@@ -96,106 +96,106 @@
 # UVM_INFO ./components/async_fifo_mon.sv(38) @ 0: uvm_test_top.env.agnt.mon [MON_CLASS] Inside Run Phase!
 # UVM_INFO ./components/async_fifo_drv.sv(35) @ 0: uvm_test_top.env.agnt.drv [DRV_CLASS] Inside Run Phase!
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 10: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 10: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 10: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 20: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 20: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 20: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 30: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 30: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 30: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 40: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 40: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 40: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 50: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 50: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 50: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 60: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 60: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 60: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 70: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 70: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 70: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 80: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 80: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 80: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 90: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 90: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 90: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 100: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 100: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 100: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 110: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 110: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 110: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 120: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 120: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 120: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 130: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 130: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 130: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 140: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 140: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 140: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 150: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 150: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 150: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 160: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 160: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 160: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 170: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 170: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 170: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 180: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 180: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 180: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 190: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 190: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 190: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 200: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 200: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 200: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 210: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 210: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 210: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 220: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 220: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 220: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 230: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 230: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 230: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 240: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 240: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 240: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 250: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 250: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 250: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 260: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 260: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 260: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 270: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 270: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 270: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 280: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 280: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 280: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 290: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 290: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 290: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 300: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 300: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 300: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 310: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 310: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 310: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 320: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 320: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 320: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 330: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 330: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 330: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 340: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 340: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 340: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 350: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 350: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 350: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 360: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 360: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 360: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 370: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 370: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 370: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 380: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 380: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 380: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 390: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 390: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 390: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 400: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 400: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 400: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 410: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 410: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 410: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 420: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 420: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 420: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 430: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 430: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 430: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 440: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 440: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 440: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 450: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 450: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 450: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 460: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 460: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 460: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 470: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 470: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 470: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 480: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 480: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 480: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 490: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 490: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 490: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # UVM_INFO ./components/async_fifo_scb.sv(37) @ 500: uvm_test_top.env.scb [SCB_CLASS] Packet Received!
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 500: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO ./components/async_fifo_scb.sv(69) @ 500: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!
+# UVM_INFO ./components/async_fifo_scb.sv(69) @ 500: uvm_test_top.env.scb [SCB_CLASS] Packet Processed!,          16,           4
 # 
 # --- UVM Report Summary ---
 # 
@@ -218,5 +218,5 @@
 # [UVMTOP]     1
 # ** Note: $finish    : /pkgs/mentor/questa/10.6b/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 500 ns  Iteration: 54  Instance: /custom_async_fifo_tb
-# End time: 11:48:26 on May 27,2025, Elapsed time: 0:00:04
+# End time: 12:22:19 on May 27,2025, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0
