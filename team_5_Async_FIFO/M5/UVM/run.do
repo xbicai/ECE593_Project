@@ -15,7 +15,7 @@ vlog async_fifo_package.sv
 vlog async_fifo_tb.sv
 
 ## Simulate Testbench
-vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M3_tb_transcript
+vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M3_tb_transcript +UVM_VERBOSITY=UVM_HIGH
 
 run -all
 

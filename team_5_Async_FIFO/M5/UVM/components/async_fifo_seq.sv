@@ -1,18 +1,38 @@
-
+//----------------------------------------------------
+// async_fifo_drv.sv
+// 	UVM Driver Class for async_fifo DUT
+//
+//----------------------------------------------------
 class async_fifo_seq extends uvm_sequence #(async_fifo_pkt);
-  `uvm_object_utils(async_fifo_seq)
+	// UVM factory registration
+	`uvm_object_utils(async_fifo_seq)
 
-  function new(string name = "async_fifo_seq");
-    super.new(name);
-  endfunction
+	// Instantiate packet handle
+	async_fifo_pkt pkt;
 
-  virtual task body();
-    async_fifo_pkt pkt;
-    repeat (20) begin
-      pkt = async_fifo_pkt::type_id::create("pkt");
-      start_item(pkt);
-      assert(pkt.randomize());
-      finish_item(pkt);
-    end
-  endtask
+	//----------------------------------------------------
+	// Standard UVM Constructor
+	//----------------------------------------------------
+	function new(string name = "async_fifo_seq");
+		super.new(name);
+	endfunction
+
+	//----------------------------------------------------
+	// Sequence
+	//----------------------------------------------------
+	virtual task body();
+		pkt = async_fifo_pkt::type_id::create("pkt");
+		
+		repeat(2) begin
+			start_item(pkt);
+			void'(pkt.randomize() with {ainit == 1;});
+			finish_item(pkt);
+		end
+
+		repeat(5) begin
+			start_item(pkt);
+			void'(pkt.randomize() with {ainit == 0;});
+			finish_item(pkt);
+		end
+	endtask
 endclass
