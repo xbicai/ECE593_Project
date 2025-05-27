@@ -55,7 +55,6 @@ class async_fifo_drv extends uvm_driver #(async_fifo_pkt);
 			join
 	
 			// `uvm_info("DRV_CLASS", $sformatf("ainit=%d, rd=%d, wr=%d, data=%d", vif.ainit, vif.req_rd, vif.req_wr, vif.data_wr), UVM_HIGH)
-			#10
 			seq_item_port.item_done();
 		end
 	endtask

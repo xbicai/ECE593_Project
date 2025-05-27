@@ -72,7 +72,28 @@ class async_fifo_scoreboard extends uvm_component;
 			a_full_local 	= 0;
 			a_empty_local 	= 1;
 		end else begin
-			// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, wr=%d, rd=%d, full=%d, empty=%d", curr_tx.ainit, curr_tx.wr_en, curr_tx.rd_en, curr_tx.fifo_full, curr_tx.fifo_empty), UVM_HIGH)
+			// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, wr=%d, rd=%d, full=%d, empty=%d", curr_tx.ainit, curr_tx.wr_en, curr_tx.rd_en, curr_tx.fifo_full, curr_tx.fifo_empty), UVM_HIGH)	
+			
+			// Update Flags
+			if (ref_model.size() >= `FIFO_DEPTH)	// Full
+				full_local = 1;
+			else 
+				full_local = 0;
+			if (ref_model.size() >= `FIFO_DEPTH-1)	// Almost Full
+				a_full_local = 1;
+			else 
+				a_full_local = 0;
+
+			if (ref_model.size() <= 0)				// Empty
+				empty_local = 1;
+			else 
+				empty_local = 0;
+
+			if (ref_model.size() <= 1)				// Almost Empty
+				a_empty_local = 1;
+			else 
+				a_empty_local = 0;	
+
 			// Track Write
 			if (curr_tx.wr_en && !curr_tx.fifo_full) begin
 				// Write to model
@@ -95,27 +116,7 @@ class async_fifo_scoreboard extends uvm_component;
 					`uvm_error("COMPARE", $sformatf("Transction Failed! DUT=%d, Ref=%d", actual, expected))
 				else
 					`uvm_info("COMPARE", $sformatf("Transction Passed! DUT=%d, Ref=%d", actual, expected), UVM_LOW)
-			end
-
-			// Update Flags
-			if (ref_model.size() >= `FIFO_DEPTH)	// Full
-				full_local = 1;
-			else 
-				full_local = 0;
-			if (ref_model.size() >= `FIFO_DEPTH-1)	// Almost Full
-				a_full_local = 1;
-			else 
-				a_full_local = 0;
-
-			if (ref_model.size() <= 0)				// Empty
-				empty_local = 1;
-			else 
-				empty_local = 0;
-
-			if (ref_model.size() <= 1)				// Almost Empty
-				a_empty_local = 1;
-			else 
-				a_empty_local = 0;
+			end	
 
 			// Compare Flags
 			if (curr_tx.fifo_full != full_local)

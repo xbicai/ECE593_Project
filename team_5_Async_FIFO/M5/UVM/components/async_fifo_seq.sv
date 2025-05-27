@@ -27,6 +27,7 @@ class async_fifo_seq extends uvm_sequence #(async_fifo_pkt);
 			start_item(pkt);
 			void'(pkt.randomize() with {ainit == 0;});
 			finish_item(pkt);
+			#10;
 		end
 
 		// Consecutive Writes
@@ -34,6 +35,7 @@ class async_fifo_seq extends uvm_sequence #(async_fifo_pkt);
 			start_item(pkt);
 			void'(pkt.randomize() with {ainit == 1; wr_en == 1; rd_en == 0;});
 			finish_item(pkt);
+			#10;
 		end
 
 		// Consecutive Reads
@@ -41,6 +43,7 @@ class async_fifo_seq extends uvm_sequence #(async_fifo_pkt);
 			start_item(pkt);
 			void'(pkt.randomize() with {ainit == 1; wr_en == 0; rd_en == 1;});
 			finish_item(pkt);
+			#10;
 		end
 
 	endtask

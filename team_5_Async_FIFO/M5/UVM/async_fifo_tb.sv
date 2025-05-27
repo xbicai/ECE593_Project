@@ -40,7 +40,7 @@ module custom_async_fifo_tb;
     //----------------------------------------------------
 	// DUT Instantiation
 	//----------------------------------------------------
-	custom_async_fifo #(.DATASIZE(`FIFO_WIDTH), .ADDRSIZE(`FIFO_DEPTH)) iDUT (
+	custom_async_fifo #(.DATASIZE(`FIFO_WIDTH), .ADDRSIZE(`FIFO_ADDR)) iDUT (
         .din               (_intf.data_wr),
         .dout              (_intf.data_rd),
         .fifo_full         (_intf.fifo_full),

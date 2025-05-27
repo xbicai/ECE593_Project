@@ -59,10 +59,9 @@ class async_fifo_mon extends uvm_monitor;
 					pkt.fifo_almost_empty 	= vif.fifo_almost_empty;
 				end
 			join
+			
 			// `uvm_info("MON_CLASS", $sformatf("ainit=%d, rd=%d, wr=%d, data_wr=%d, data_rd=%d", pkt.ainit, pkt.rd_en, pkt.wr_en, pkt.din, pkt.dout), UVM_HIGH)
 			monitor_port.write(pkt);
-			#10;
-
 		end
 	endtask
 endclass

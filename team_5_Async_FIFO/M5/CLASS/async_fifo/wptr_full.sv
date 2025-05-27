@@ -32,7 +32,7 @@ module custom_wptr_full (
   assign wgray_next  = (wbin_next >> 1) ^ wbin_next;
 
   assign fifo_full_val = (wgray_next == {~rptr_sync2_wrclk[ADDRSIZE:ADDRSIZE-1], rptr_sync2_wrclk[ADDRSIZE-2:0]});
-  assign fifo_almost_full_val = ((wgray_next-1 == {~rptr_sync2_wrclk[ADDRSIZE:ADDRSIZE-1], rptr_sync2_wrclk[ADDRSIZE-2:0]}) || fifo_full_val);
+  assign fifo_almost_full_val = ((wgray_next>>1 == {~rptr_sync2_wrclk[ADDRSIZE:ADDRSIZE-1], rptr_sync2_wrclk[ADDRSIZE-2:0]}) || fifo_full_val);
 
   always_ff @(posedge wclk_i or negedge wrst_n_i) begin
     if (~wrst_n_i) begin

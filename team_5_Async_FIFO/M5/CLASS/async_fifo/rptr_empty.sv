@@ -31,7 +31,7 @@ module custom_rptr_empty (
   assign rgray_next = (rbin_next >> 1) ^ rbin_next;
 
   assign fifo_empty_val = (rgray_next == wptr_sync2_rdclk);
-  assign fifo_almost_empty_val = ((rgray_next+1 == wptr_sync2_rdclk) || fifo_empty_val);
+  assign fifo_almost_empty_val = ((rgray_next>>1 == wptr_sync2_rdclk) || fifo_empty_val);
 
   always_ff @(posedge rclk_i or negedge rrst_n_i) begin
     if (~rrst_n_i) begin
