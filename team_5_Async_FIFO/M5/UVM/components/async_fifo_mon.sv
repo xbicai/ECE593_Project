@@ -39,25 +39,30 @@ class async_fifo_mon extends uvm_monitor;
 	
 		forever begin
 			pkt = async_fifo_pkt::type_id::create("pkt");
-			if (vif.ainit) begin
-				pkt.ainit = vif.ainit;
-			end else begin
-				// Sample Input
-				@(posedge vif.clk_rd);
-				pkt.rd_en 				= vif.req_rd;
-				pkt.wr_en 				= vif.req_wr;
-				pkt.rd_en 				= vif.req_rd;
-				pkt.ainit				= vif.ainit;
-
-				// Sample Outputs
-				pkt.dout 				= vif.data_rd;
-				pkt.fifo_empty 			= vif.fifo_empty;
-				pkt.fifo_full 			= vif.fifo_full;
-				pkt.fifo_almost_empty 	= vif.fifo_almost_empty;
-				pkt.fifo_almost_full  	= vif.fifo_almost_full;
-			end
 			
+			fork
+				begin : Reset
+					pkt.ainit 				= vif.ainit;
+				end
+				begin : Write
+					@(posedge vif.clk_wr);
+					pkt.wr_en 				= vif.req_wr;
+					pkt.din 				= vif.data_wr;
+					pkt.fifo_full 			= vif.fifo_full;
+					pkt.fifo_almost_full  	= vif.fifo_almost_full;
+				end
+				begin : Read
+					@(posedge vif.clk_rd);
+					pkt.rd_en 				= vif.req_rd;
+					pkt.dout 				= vif.data_rd;
+					pkt.fifo_empty 			= vif.fifo_empty;
+					pkt.fifo_almost_empty 	= vif.fifo_almost_empty;
+				end
+			join
+			// `uvm_info("MON_CLASS", $sformatf("ainit=%d, rd=%d, wr=%d, data_wr=%d, data_rd=%d", pkt.ainit, pkt.rd_en, pkt.wr_en, pkt.din, pkt.dout), UVM_HIGH)
 			monitor_port.write(pkt);
+			#10;
+
 		end
 	endtask
 endclass

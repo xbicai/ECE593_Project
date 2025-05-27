@@ -52,7 +52,7 @@ module custom_async_fifo_tb;
         .wrst_n_i          (_intf.ainit),
         .ren               (_intf.req_rd),
         .rclk_i            (rclk),
-        .rrst_n_i          (ainit)
+        .rrst_n_i          (_intf.ainit)
     );
 
 	//----------------------------------------------------

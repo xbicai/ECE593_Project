@@ -25,14 +25,23 @@ class async_fifo_seq extends uvm_sequence #(async_fifo_pkt);
 		
 		repeat(2) begin
 			start_item(pkt);
-			void'(pkt.randomize() with {ainit == 1;});
-			finish_item(pkt);
-		end
-
-		repeat(5) begin
-			start_item(pkt);
 			void'(pkt.randomize() with {ainit == 0;});
 			finish_item(pkt);
 		end
+
+		// Consecutive Writes
+		repeat(5) begin
+			start_item(pkt);
+			void'(pkt.randomize() with {ainit == 1; wr_en == 1; rd_en == 0;});
+			finish_item(pkt);
+		end
+
+		// Consecutive Reads
+		repeat(5) begin
+			start_item(pkt);
+			void'(pkt.randomize() with {ainit == 1; wr_en == 0; rd_en == 1;});
+			finish_item(pkt);
+		end
+
 	endtask
 endclass

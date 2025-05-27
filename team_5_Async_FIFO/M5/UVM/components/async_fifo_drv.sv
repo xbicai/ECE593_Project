@@ -39,11 +39,23 @@ class async_fifo_drv extends uvm_driver #(async_fifo_pkt);
 			seq_item_port.get_next_item(pkt);
 
 			// Driver inputs
-			vif.req_wr 	<= pkt.wr_en;
-			vif.data_wr <= pkt.din;
-			vif.req_rd 	<= pkt.rd_en;
-			vif.ainit 	<= pkt.ainit;
-
+			fork
+				begin : Reset
+					vif.ainit 	<= pkt.ainit;
+				end
+				begin : Write
+					@(posedge vif.clk_wr);
+					vif.req_wr 	<= pkt.wr_en;
+					vif.data_wr <= pkt.din;
+				end
+				begin : Read
+					@(posedge vif.clk_rd);
+					vif.req_rd 	<= pkt.rd_en;
+				end
+			join
+	
+			// `uvm_info("DRV_CLASS", $sformatf("ainit=%d, rd=%d, wr=%d, data=%d", vif.ainit, vif.req_rd, vif.req_wr, vif.data_wr), UVM_HIGH)
+			#10
 			seq_item_port.item_done();
 		end
 	endtask

@@ -6,10 +6,19 @@
 class async_fifo_scoreboard extends uvm_component;
 	`uvm_component_utils(async_fifo_scoreboard)
 
+	//----------------------------------------------------
+	// Instantiations
+	//----------------------------------------------------
 	uvm_analysis_imp #(async_fifo_pkt, async_fifo_scoreboard) scoreboard_port;
-	//   queue [7:0] ref_model;
+	// Transaction Buffer
 	async_fifo_pkt tx[$];
+	// Reference Model
 	bit [`FIFO_WIDTH-1:0] ref_model[$];
+	// Local Flags
+	bit full_local, empty_local, a_full_local, a_empty_local;
+	// Temp Values for read comparison
+	logic [`FIFO_WIDTH-1:0] expected;
+	logic [`FIFO_WIDTH-1:0] actual;
 
 	//----------------------------------------------------
 	// Standard UVM Constructor
@@ -34,7 +43,7 @@ class async_fifo_scoreboard extends uvm_component;
 	//----------------------------------------------------
 	function void write(async_fifo_pkt pkt);
 		tx.push_back(pkt);
-		`uvm_info("SCB_CLASS", "Packet Received!", UVM_HIGH)
+		// `uvm_info("SCB_CLASS", "Packet Received!", UVM_HIGH)
 	endfunction
 
 	//----------------------------------------------------
@@ -51,22 +60,74 @@ class async_fifo_scoreboard extends uvm_component;
 			compare(curr_tx);
 		end
 
-		// if (pkt.wr_en && !pkt.fifo_full)
-		// 	ref_model.push_back(pkt.din);
-		// if (pkt.rd_en && !pkt.fifo_empty) begin
-		// 	if (ref_model.size() == 0) begin
-		// 		`uvm_error("SCOREBOARD", "Read attempted from empty reference queue!");
-		// 	end else begin
-		// 		logic [7:0] exp = ref_model.pop_front();
-		// 		if (pkt.dout !== exp) begin
-		// 		`uvm_error("SCOREBOARD", $sformatf("Mismatch: expected %0h, got %0h", exp, pkt.dout));
-		// 		end
-		// 	end
-		// end
 	endtask
 
 	task compare(async_fifo_pkt	curr_tx);
-		`uvm_info("SCB_CLASS", $sformatf("Packet Processed!, %d, %d", `FIFO_WIDTH, `FIFO_DEPTH), UVM_HIGH)
+		// `uvm_info("SCB_CLASS", $sformatf("Packet Processed!, %d, %d", `FIFO_WIDTH, `FIFO_DEPTH), UVM_HIGH)
+
+		if (curr_tx.ainit == 0) begin
+			ref_model.delete();			// Reset Model
+			full_local 		= 0;
+			empty_local 	= 1;
+			a_full_local 	= 0;
+			a_empty_local 	= 1;
+		end else begin
+			// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, wr=%d, rd=%d, full=%d, empty=%d", curr_tx.ainit, curr_tx.wr_en, curr_tx.rd_en, curr_tx.fifo_full, curr_tx.fifo_empty), UVM_HIGH)
+			// Track Write
+			if (curr_tx.wr_en && !curr_tx.fifo_full) begin
+				// Write to model
+				if (!full_local)
+					ref_model.push_back(curr_tx.din);
+				`uvm_info("SCB_CLASS", $sformatf("Write! Fifo=%d", ref_model.size()), UVM_HIGH)
+				// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, wr=%d, data=%d, full=%d", curr_tx.ainit, curr_tx.wr_en, curr_tx.din, curr_tx.fifo_full), UVM_HIGH)
+			end
+
+			// Track Read
+			if (curr_tx.rd_en && !curr_tx.fifo_empty) begin
+				// Read from Model
+				// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, rd=%d, data=%d, full=%d", curr_tx.ainit, curr_tx.rd_en, curr_tx.dout, curr_tx.fifo_empty), UVM_HIGH)
+				expected = ref_model.pop_front();
+				`uvm_info("SCB_CLASS", $sformatf("Read! Fifo=%d", ref_model.size()), UVM_HIGH)
+				actual = curr_tx.dout;
+
+				// Compare model to DUT
+				if (actual != expected)
+					`uvm_error("COMPARE", $sformatf("Transction Failed! DUT=%d, Ref=%d", actual, expected))
+				else
+					`uvm_info("COMPARE", $sformatf("Transction Passed! DUT=%d, Ref=%d", actual, expected), UVM_LOW)
+			end
+
+			// Update Flags
+			if (ref_model.size() >= `FIFO_DEPTH)	// Full
+				full_local = 1;
+			else 
+				full_local = 0;
+			if (ref_model.size() >= `FIFO_DEPTH-1)	// Almost Full
+				a_full_local = 1;
+			else 
+				a_full_local = 0;
+
+			if (ref_model.size() <= 0)				// Empty
+				empty_local = 1;
+			else 
+				empty_local = 0;
+
+			if (ref_model.size() <= 1)				// Almost Empty
+				a_empty_local = 1;
+			else 
+				a_empty_local = 0;
+
+			// Compare Flags
+			if (curr_tx.fifo_full != full_local)
+				`uvm_error("COMPARE", $sformatf("Full Flag Mismatch! DUT=%d, Ref=%d", curr_tx.fifo_full, full_local))
+			if (curr_tx.fifo_empty != empty_local)
+				`uvm_error("COMPARE", $sformatf("Empty Flag Mismatch! DUT=%d, Ref=%d", curr_tx.fifo_empty, empty_local))
+			if (curr_tx.fifo_almost_full != a_full_local)
+				`uvm_error("COMPARE", $sformatf("Almost Full Flag Mismatch! DUT=%d, Ref=%d", curr_tx.fifo_almost_full, a_full_local))
+			if (curr_tx.fifo_almost_empty != a_empty_local)
+				`uvm_error("COMPARE", $sformatf("Almost Empty Flag Mismatch! DUT=%d, Ref=%d", curr_tx.fifo_almost_empty, a_empty_local))
+			;
+		end
 
 	endtask
 endclass
