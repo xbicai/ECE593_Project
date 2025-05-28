@@ -1,91 +1,78 @@
-Coverage Report Summary Data by file
+Coverage Report Summary Data by instance
 
 =================================================================================
-=== File: ../CLASS/async_fifo/fifomem.sv
+=== Instance: /custom_async_fifo_tb/iDUT/u_sync_r2w
+=== Design Unit: work.custom_sync_r2w
 =================================================================================
-    Enabled Coverage            Active      Hits    Misses % Covered
-    ----------------            ------      ----    ------ ---------
-    Stmts                            3         3         0     100.0
-    Branches                         2         2         0     100.0
-    FEC Condition Terms              2         2         0     100.0
-    FEC Expression Terms             0         0         0     100.0
-    FSMs                                                       100.0
-        States                       0         0         0     100.0
-        Transitions                  0         0         0     100.0
-    Toggle Bins                     50        45         5      90.0
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+    Statements                       3         3         0   100.00%
+    Toggles                         22        22         0   100.00%
 
 =================================================================================
-=== File: ../CLASS/async_fifo/rptr_empty.sv
+=== Instance: /custom_async_fifo_tb/iDUT/u_sync_w2r
+=== Design Unit: work.custom_sync_w2r
 =================================================================================
-    Enabled Coverage            Active      Hits    Misses % Covered
-    ----------------            ------      ----    ------ ---------
-    Stmts                           13        13         0     100.0
-    Branches                         4         4         0     100.0
-    FEC Condition Terms              0         0         0     100.0
-    FEC Expression Terms             2         2         0     100.0
-    FSMs                                                       100.0
-        States                       0         0         0     100.0
-        Transitions                  0         0         0     100.0
-    Toggle Bins                     48        48         0     100.0
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+    Statements                       3         3         0   100.00%
+    Toggles                         22        22         0   100.00%
 
 =================================================================================
-=== File: ../CLASS/async_fifo/sync_r2w.sv
+=== Instance: /custom_async_fifo_tb/iDUT/u_fifomem
+=== Design Unit: work.custom_fifomem
 =================================================================================
-    Enabled Coverage            Active      Hits    Misses % Covered
-    ----------------            ------      ----    ------ ---------
-    Stmts                            3         3         0     100.0
-    Branches                         2         2         0     100.0
-    FEC Condition Terms              0         0         0     100.0
-    FEC Expression Terms             0         0         0     100.0
-    FSMs                                                       100.0
-        States                       0         0         0     100.0
-        Transitions                  0         0         0     100.0
-    Toggle Bins                     26        21         5      80.7
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+    Conditions                       2         2         0   100.00%
+    Statements                       3         3         0   100.00%
+    Toggles                         46        46         0   100.00%
 
 =================================================================================
-=== File: ../CLASS/async_fifo/sync_w2r.sv
+=== Instance: /custom_async_fifo_tb/iDUT/u_rptr_empty
+=== Design Unit: work.custom_rptr_empty
 =================================================================================
-    Enabled Coverage            Active      Hits    Misses % Covered
-    ----------------            ------      ----    ------ ---------
-    Stmts                            3         3         0     100.0
-    Branches                         2         2         0     100.0
-    FEC Condition Terms              0         0         0     100.0
-    FEC Expression Terms             0         0         0     100.0
-    FSMs                                                       100.0
-        States                       0         0         0     100.0
-        Transitions                  0         0         0     100.0
-    Toggle Bins                     22        22         0     100.0
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+    Expressions                      3         3         0   100.00%
+    Statements                      13        13         0   100.00%
+    Toggles                         48        48         0   100.00%
 
 =================================================================================
-=== File: ../CLASS/async_fifo/top.sv
+=== Instance: /custom_async_fifo_tb/iDUT/u_wptr_full
+=== Design Unit: work.custom_wptr_full
 =================================================================================
-    Enabled Coverage            Active      Hits    Misses % Covered
-    ----------------            ------      ----    ------ ---------
-    Stmts                            0         0         0     100.0
-    Branches                         0         0         0     100.0
-    FEC Condition Terms              0         0         0     100.0
-    FEC Expression Terms             0         0         0     100.0
-    FSMs                                                       100.0
-        States                       0         0         0     100.0
-        Transitions                  0         0         0     100.0
-    Toggle Bins                     92        82        10      89.1
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+    Expressions                      3         2         1    66.66%
+    Statements                      13        13         0   100.00%
+    Toggles                         48        48         0   100.00%
 
 =================================================================================
-=== File: ../CLASS/async_fifo/wptr_full.sv
+=== Instance: /custom_async_fifo_tb/iDUT
+=== Design Unit: work.custom_async_fifo
 =================================================================================
-    Enabled Coverage            Active      Hits    Misses % Covered
-    ----------------            ------      ----    ------ ---------
-    Stmts                           13        13         0     100.0
-    Branches                         4         4         0     100.0
-    FEC Condition Terms              0         0         0     100.0
-    FEC Expression Terms             2         1         1      50.0
-    FSMs                                                       100.0
-        States                       0         0         0     100.0
-        Transitions                  0         0         0     100.0
-    Toggle Bins                     52        47         5      90.3
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         84        84         0   100.00%
+
+=================================================================================
+=== Instance: /new_proj_pkg
+=== Design Unit: work.new_proj_pkg
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          7        na        na        na
+            Covergroup Bins         14        14         0   100.00%
 
 
-TOTAL COVERGROUP COVERAGE: 100.0%  COVERGROUP TYPES: 1
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
 
-Total Coverage By File (code coverage only, filtered view): 93.2%
+Total Coverage By Instance (filtered view): 97.22%
 
