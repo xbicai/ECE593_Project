@@ -10,6 +10,7 @@ package new_proj_pkg;
 	`include "./components/async_fifo_mon.sv"
 	`include "./components/async_fifo_agnt.sv"
 	`include "./components/async_fifo_scb.sv"
+	`include "./components/async_fifo_cov.sv"
 	`include "./components/async_fifo_env.sv"
 	`include "./components/async_fifo_test.sv"
 endpackage

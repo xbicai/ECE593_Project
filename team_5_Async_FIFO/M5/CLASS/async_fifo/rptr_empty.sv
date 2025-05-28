@@ -31,12 +31,14 @@ module custom_rptr_empty (
   assign rgray_next = (rbin_next >> 1) ^ rbin_next;
 
   assign fifo_empty_val = (rgray_next == wptr_sync2_rdclk);
+//   assign fifo_empty_val = (rgray_next == {1'b0, wptr_sync2_rdclk[ADDRSIZE-1:0]});
   assign fifo_almost_empty_val = ((rgray_next>>1 == wptr_sync2_rdclk) || fifo_empty_val);
+
 
   always_ff @(posedge rclk_i or negedge rrst_n_i) begin
     if (~rrst_n_i) begin
-      fifo_empty <= 1'b1;
-	  fifo_almost_empty <= 1'b1;
+      fifo_empty <= 1'b0;
+	  fifo_almost_empty <= 1'b0;
 	end else begin
       fifo_empty <= fifo_empty_val;
 	  fifo_almost_empty <= fifo_almost_empty_val;

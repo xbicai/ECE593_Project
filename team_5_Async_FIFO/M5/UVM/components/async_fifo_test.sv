@@ -42,7 +42,9 @@ class test extends uvm_test;
 
 		phase.raise_objection(this);
 		seq = async_fifo_seq::type_id::create("seq");
-		seq.start(env.agnt.sqr);
+		repeat (2) begin
+			seq.start(env.agnt.sqr);
+		end
 		#500;
 		phase.drop_objection(this);
 	endtask
