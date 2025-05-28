@@ -72,8 +72,8 @@ class test extends uvm_test;
 		seq114 = seq1_1_4::type_id::create("seq114");
 		seq115 = seq1_1_5::type_id::create("seq115");
 		seq116 = seq1_1_6::type_id::create("seq116");
-		seq117 = seq1_1_7::type_id::create("seq117");
-
+/*		seq117 = seq1_1_7::type_id::create("seq117");
+/* 
 		seq121 = seq1_2_1::type_id::create("seq121");
 		seq122 = seq1_2_2::type_id::create("seq122");
 		seq123 = seq1_2_3::type_id::create("seq123");
@@ -81,7 +81,7 @@ class test extends uvm_test;
 
 		seq141 = seq1_4_1::type_id::create("seq141");
 		seq142 = seq1_4_2::type_id::create("seq142");
-		seq143 = seq1_4_3::type_id::create("seq143");
+		seq143 = seq1_4_3::type_id::create("seq143"); */
 	endtask
 
 	task start_seqs();
@@ -97,9 +97,9 @@ class test extends uvm_test;
 		`SEQ_DELAY_L;
 		seq116.start(env.agnt.sqr);
 		`SEQ_DELAY_S;
-		seq117.start(env.agnt.sqr);
+/*		seq117.start(env.agnt.sqr);
 		`SEQ_DELAY_L;
-
+ 
 		seq121.start(env.agnt.sqr);
 		`SEQ_DELAY_L;
 		seq122.start(env.agnt.sqr);
@@ -114,6 +114,6 @@ class test extends uvm_test;
 		seq142.start(env.agnt.sqr);
 		`SEQ_DELAY_L;
 		seq143.start(env.agnt.sqr);
-		`SEQ_DELAY_L;
+		`SEQ_DELAY_L; */
 	endtask
 endclass

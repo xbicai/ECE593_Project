@@ -1,87 +1,184 @@
-COVERGROUP COVERAGE:
------------------------------------------------------------------------------------------------
-Covergroup                                             Metric       Goal    Status               
-                                                                                              
------------------------------------------------------------------------------------------------
- TYPE /new_proj_pkg/async_fifo_cov/cg                  100.0%        100    Covered              
-    covered/total bins:                                    14         14                      
-    missing/total bins:                                     0         14                      
-    % Hit:                                             100.0%        100                      
-    Coverpoint cg::wr_en_cp                            100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-    Coverpoint cg::rd_en_cp                            100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-    Coverpoint cg::full_f_cp                           100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-    Coverpoint cg::empty_f_cp                          100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-    Coverpoint cg::a_full_f_cp                         100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-    Coverpoint cg::a_empty_f_cp                        100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-    Coverpoint cg::ainit_cp                            100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
- CLASS async_fifo_cov
- Covergroup instance \/new_proj_pkg::async_fifo_cov::cg  
-                                                       100.0%        100    Covered              
-    covered/total bins:                                    14         14                      
-    missing/total bins:                                     0         14                      
-    % Hit:                                             100.0%        100                      
-    Coverpoint wr_en_cp                                100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-        bin auto[0]                                        44          1    Covered              
-        bin auto[1]                                        14          1    Covered              
-    Coverpoint rd_en_cp                                100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-        bin auto[0]                                        13          1    Covered              
-        bin auto[1]                                        45          1    Covered              
-    Coverpoint full_f_cp                               100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-        bin auto[0]                                        46          1    Covered              
-        bin auto[1]                                        13          1    Covered              
-    Coverpoint empty_f_cp                              100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-        bin auto[0]                                        15          1    Covered              
-        bin auto[1]                                        44          1    Covered              
-    Coverpoint a_full_f_cp                             100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-        bin auto[0]                                        46          1    Covered              
-        bin auto[1]                                        13          1    Covered              
-    Coverpoint a_empty_f_cp                            100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-        bin auto[0]                                        15          1    Covered              
-        bin auto[1]                                        44          1    Covered              
-    Coverpoint ainit_cp                                100.0%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                         100.0%        100                      
-        bin t_0to1                                          2          1    Covered              
-        bin t_1to0                                          2          1    Covered              
+Coverage Report by instance with details
 
-TOTAL COVERGROUP COVERAGE: 100.0%  COVERGROUP TYPES: 1
+=================================================================================
+=== Instance: /new_proj_pkg
+=== Design Unit: work.new_proj_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          7        na        na        na
+            Covergroup Bins         14        14         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /new_proj_pkg/async_fifo_cov/cg                 100.00%        100          -    Covered              
+    covered/total bins:                                    14         14          -                      
+    missing/total bins:                                     0         14          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint wr_en_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint rd_en_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint full_f_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint empty_f_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint a_full_f_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint a_empty_f_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ainit_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/new_proj_pkg::async_fifo_cov::cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    14         14          -                      
+    missing/total bins:                                     0         14          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint wr_en_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       144          1          -    Covered              
+        bin auto[1]                                        71          1          -    Covered              
+    Coverpoint rd_en_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        71          1          -    Covered              
+        bin auto[1]                                       144          1          -    Covered              
+    Coverpoint full_f_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       114          1          -    Covered              
+        bin auto[1]                                       102          1          -    Covered              
+    Coverpoint empty_f_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       108          1          -    Covered              
+        bin auto[1]                                       108          1          -    Covered              
+    Coverpoint a_full_f_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       114          1          -    Covered              
+        bin auto[1]                                       102          1          -    Covered              
+    Coverpoint a_empty_f_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       107          1          -    Covered              
+        bin auto[1]                                       109          1          -    Covered              
+    Coverpoint ainit_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin t_0to1                                          6          1          -    Covered              
+        bin t_1to0                                          5          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /new_proj_pkg/async_fifo_cov/cg                 100.00%        100          -    Covered              
+    covered/total bins:                                    14         14          -                      
+    missing/total bins:                                     0         14          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint wr_en_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint rd_en_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint full_f_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint empty_f_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint a_full_f_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint a_empty_f_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ainit_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/new_proj_pkg::async_fifo_cov::cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    14         14          -                      
+    missing/total bins:                                     0         14          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint wr_en_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       144          1          -    Covered              
+        bin auto[1]                                        71          1          -    Covered              
+    Coverpoint rd_en_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        71          1          -    Covered              
+        bin auto[1]                                       144          1          -    Covered              
+    Coverpoint full_f_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       114          1          -    Covered              
+        bin auto[1]                                       102          1          -    Covered              
+    Coverpoint empty_f_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       108          1          -    Covered              
+        bin auto[1]                                       108          1          -    Covered              
+    Coverpoint a_full_f_cp                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       114          1          -    Covered              
+        bin auto[1]                                       102          1          -    Covered              
+    Coverpoint a_empty_f_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       107          1          -    Covered              
+        bin auto[1]                                       109          1          -    Covered              
+    Coverpoint ainit_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin t_0to1                                          6          1          -    Covered              
+        bin t_1to0                                          5          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
