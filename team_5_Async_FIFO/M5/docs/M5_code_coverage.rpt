@@ -1,0 +1,91 @@
+Coverage Report Summary Data by file
+
+=================================================================================
+=== File: ../CLASS/async_fifo/fifomem.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         3         0     100.0
+    Branches                         2         2         0     100.0
+    FEC Condition Terms              2         2         0     100.0
+    FEC Expression Terms             0         0         0     100.0
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+    Toggle Bins                     50        45         5      90.0
+
+=================================================================================
+=== File: ../CLASS/async_fifo/rptr_empty.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           13        13         0     100.0
+    Branches                         4         4         0     100.0
+    FEC Condition Terms              0         0         0     100.0
+    FEC Expression Terms             2         2         0     100.0
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+    Toggle Bins                     48        48         0     100.0
+
+=================================================================================
+=== File: ../CLASS/async_fifo/sync_r2w.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         3         0     100.0
+    Branches                         2         2         0     100.0
+    FEC Condition Terms              0         0         0     100.0
+    FEC Expression Terms             0         0         0     100.0
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+    Toggle Bins                     26        21         5      80.7
+
+=================================================================================
+=== File: ../CLASS/async_fifo/sync_w2r.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         3         0     100.0
+    Branches                         2         2         0     100.0
+    FEC Condition Terms              0         0         0     100.0
+    FEC Expression Terms             0         0         0     100.0
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+    Toggle Bins                     22        22         0     100.0
+
+=================================================================================
+=== File: ../CLASS/async_fifo/top.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            0         0         0     100.0
+    Branches                         0         0         0     100.0
+    FEC Condition Terms              0         0         0     100.0
+    FEC Expression Terms             0         0         0     100.0
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+    Toggle Bins                     92        82        10      89.1
+
+=================================================================================
+=== File: ../CLASS/async_fifo/wptr_full.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           13        13         0     100.0
+    Branches                         4         4         0     100.0
+    FEC Condition Terms              0         0         0     100.0
+    FEC Expression Terms             2         1         1      50.0
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+    Toggle Bins                     52        47         5      90.3
+
+
+TOTAL COVERGROUP COVERAGE: 100.0%  COVERGROUP TYPES: 1
+
+Total Coverage By File (code coverage only, filtered view): 93.2%
+
