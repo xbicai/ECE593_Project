@@ -104,6 +104,8 @@ class async_fifo_scoreboard extends uvm_component;
 				end
 				`uvm_info("SCB_CLASS", $sformatf("Write! Fifo=%d", ref_model.size()), UVM_HIGH)
 				// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, wr=%d, data=%d, full=%d", curr_tx.ainit, curr_tx.wr_en, curr_tx.din, curr_tx.fifo_full), UVM_HIGH)
+			end else if (curr_tx.wr_en) begin
+				`uvm_info("COMPARE", $sformatf("\tFIFO Full! Ignored %d", curr_tx.din), UVM_LOW)
 			end
 
 			// Track Read
@@ -114,13 +116,16 @@ class async_fifo_scoreboard extends uvm_component;
 				expected = ref_model.pop_front();
 				`uvm_info("SCB_CLASS", $sformatf("Read! Fifo=%d", ref_model.size()), UVM_HIGH)
 				actual = curr_tx.dout;
+				`uvm_info("COMPARE", $sformatf("\tJust read %d", curr_tx.dout), UVM_LOW)
 
 				// Compare model to DUT
 				if (actual != expected)
 					`uvm_error("COMPARE", $sformatf("Transction Failed! DUT=%d, Ref=%d", actual, expected))
 				else
 					`uvm_info("COMPARE", $sformatf("Transction Passed! DUT=%d, Ref=%d", actual, expected), UVM_LOW)
-			end	
+			end	else if (curr_tx.rd_en) begin
+				`uvm_info("COMPARE", $sformatf("\tFIFO Empty!"), UVM_LOW)
+			end
 
 			// Compare Flags
 			if (curr_tx.fifo_full != full_local)

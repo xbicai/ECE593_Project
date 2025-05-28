@@ -8,7 +8,7 @@ class async_fifo_env extends uvm_env;
 
 	async_fifo_agnt agnt;
 	async_fifo_scoreboard scb;
-	//   virtual async_fifo_intf v_intf;
+	async_fifo_cov cov;
 
 	//----------------------------------------------------
 	// Standard UVM Constructor
@@ -26,6 +26,7 @@ class async_fifo_env extends uvm_env;
 
 		agnt = async_fifo_agnt::type_id::create("agnt", this);
 		scb = async_fifo_scoreboard::type_id::create("scb", this);
+		cov = async_fifo_cov::type_id::create("cov", this);
 	endfunction
 
 	//----------------------------------------------------
@@ -36,6 +37,7 @@ class async_fifo_env extends uvm_env;
 		`uvm_info("ENV_CLASS", "Inside Connect Phase!", UVM_HIGH)
 
 		agnt.mon.monitor_port.connect(scb.scoreboard_port);
+		agnt.mon.monitor_port.connect(cov.analysis_export);
 	endfunction
 
 	//----------------------------------------------------
