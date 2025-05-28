@@ -96,15 +96,19 @@ class async_fifo_scoreboard extends uvm_component;
 
 			// Track Write
 			if (curr_tx.wr_en && !curr_tx.fifo_full) begin
+				`uvm_info("COMPARE", $sformatf("Entered WRITE"), UVM_LOW)
 				// Write to model
-				if (!full_local)
+				if (!full_local) begin
 					ref_model.push_back(curr_tx.din);
+					`uvm_info("COMPARE", $sformatf("\tJust wrote %d", curr_tx.din), UVM_LOW)
+				end
 				`uvm_info("SCB_CLASS", $sformatf("Write! Fifo=%d", ref_model.size()), UVM_HIGH)
 				// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, wr=%d, data=%d, full=%d", curr_tx.ainit, curr_tx.wr_en, curr_tx.din, curr_tx.fifo_full), UVM_HIGH)
 			end
 
 			// Track Read
 			if (curr_tx.rd_en && !curr_tx.fifo_empty) begin
+				`uvm_info("COMPARE", $sformatf("Entered READ"), UVM_LOW)
 				// Read from Model
 				// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, rd=%d, data=%d, full=%d", curr_tx.ainit, curr_tx.rd_en, curr_tx.dout, curr_tx.fifo_empty), UVM_HIGH)
 				expected = ref_model.pop_front();
@@ -127,7 +131,6 @@ class async_fifo_scoreboard extends uvm_component;
 				`uvm_error("COMPARE", $sformatf("Almost Full Flag Mismatch! DUT=%d, Ref=%d", curr_tx.fifo_almost_full, a_full_local))
 			if (curr_tx.fifo_almost_empty != a_empty_local)
 				`uvm_error("COMPARE", $sformatf("Almost Empty Flag Mismatch! DUT=%d, Ref=%d", curr_tx.fifo_almost_empty, a_empty_local))
-			;
 		end
 
 	endtask

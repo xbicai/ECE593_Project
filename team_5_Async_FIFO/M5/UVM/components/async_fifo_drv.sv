@@ -42,6 +42,7 @@ class async_fifo_drv extends uvm_driver #(async_fifo_pkt);
 			fork
 				begin : Reset
 					vif.ainit 	<= pkt.ainit;
+					//`uvm_info("DRIVE_RUN", $sformatf("DRIVING: rst=%d", pkt.ainit), UVM_LOW)
 				end
 				begin : Write
 					@(posedge vif.clk_wr);
