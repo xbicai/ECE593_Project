@@ -55,6 +55,20 @@ module custom_async_fifo_tb;
         .rrst_n_i          (_intf.ainit)
     );
 
+	property f_means_af;
+		@(_intf.clk_wr) _intf.fifo_full == 1 |-> _intf.fifo_almost_full == 1;
+	endproperty
+
+	property e_means_ae;
+		@(_intf.clk_rd) _intf.fifo_empty == 1 |-> _intf.fifo_almost_empty == 1;
+	endproperty
+
+	always @(posedge _intf.clk_wr)
+		assert property (f_means_af);	
+
+	always @(posedge _intf.clk_rd)	
+		assert property (e_means_ae);
+
 	//----------------------------------------------------
 	// Interface Setting
 	//----------------------------------------------------

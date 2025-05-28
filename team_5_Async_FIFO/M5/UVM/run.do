@@ -21,7 +21,7 @@ vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile .
 onfinish stop
 
 # Exclude from coverage
-coverage exclude -src ./async_fifo_tb.sv
+#coverage exclude -src ./async_fifo_tb.sv
 coverage exclude -src ./async_fifo_interface.sv
 coverage exclude -src ./components/async_fifo_test.sv
 coverage exclude -src ./components/async_fifo_env.sv
@@ -39,6 +39,6 @@ run -all
 
 ## Coverage
 coverage report -cvg -code bcesft -output ../docs/M5_code_coverage.rpt
-coverage report -details -cvg -output ../docs/M5_func_coverage.rpt
+coverage report -details -cvg -assert -output ../docs/M5_func_coverage.rpt
 
 exit
