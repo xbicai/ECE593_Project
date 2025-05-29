@@ -22,6 +22,7 @@ class seq1_1_1 extends uvm_sequence #(async_fifo_pkt);
 
 	// body (the test)
 	virtual task body();
+		int count = 1;
 		pkt = async_fifo_pkt::type_id::create("pkt");
 		`uvm_info("SEQ_BODY", $sformatf("Starting test 1.1.1 - standard write/read"), UVM_LOW)
 		// starting with reset
@@ -36,12 +37,13 @@ class seq1_1_1 extends uvm_sequence #(async_fifo_pkt);
 			pkt.ainit = 1;
 			pkt.wr_en = 1;
 			pkt.rd_en = 0;
-			pkt.din = 1;
+			pkt.din = count;
 			finish_item(pkt);
+			count++;
 		end
 
 		// Read 1's out
-		repeat(`FIFO_DEPTH/2) begin
+		repeat(`FIFO_DEPTH) begin
 			start_item(pkt);
 			pkt.ainit = 1;
 			pkt.wr_en = 0;

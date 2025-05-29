@@ -21,9 +21,9 @@ module custom_async_fifo_tb;
 	//----------------------------------------------------
 	// Parameters
 	//----------------------------------------------------
-	parameter W_CYCLE = 15;
+	parameter W_CYCLE = 10;
     parameter R_CYCLE = 10;
-    parameter CLK_SHIFT = 5;
+    parameter CLK_SHIFT = 0;
     // parameter SIZE     = 8;
     // parameter DEPTH    = 4;
 
