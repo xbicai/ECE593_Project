@@ -44,14 +44,18 @@ class async_fifo_cov extends uvm_subscriber #(async_fifo_pkt);
 	endfunction
 
 	virtual function void write (input async_fifo_pkt t);
-		`uvm_info(get_type_name(), "Reading data from monitor for coverage", UVM_NONE)
-		t.print();
+		// `uvm_info(get_type_name(), "Reading data from monitor for coverage", UVM_NONE)
+		// t.print();
 
 		pkt = t;
 
 		cg.sample();
 		cov = cg.get_coverage();
 
+	// 	`uvm_info(get_full_name(), $sformatf("Coverage is %d", cov), UVM_NONE);
+	endfunction
+
+	virtual function void report_phase(uvm_phase phase);
 		`uvm_info(get_full_name(), $sformatf("Coverage is %d", cov), UVM_NONE);
 	endfunction
 
