@@ -1,0 +1,15 @@
+module custom_sync_r2w (
+  input  logic [ADDRSIZE:0] rptr_g,
+  input  logic wclk_i, wrst_n_i,
+  output logic [ADDRSIZE:0] rptr_sync2_wrclk
+);
+  parameter ADDRSIZE = 32;
+  logic [ADDRSIZE:0] rptr_sync1;
+
+  always_ff @(posedge wclk_i or negedge wrst_n_i) begin
+    if (~wrst_n_i)
+      {rptr_sync2_wrclk, rptr_sync1} <= '0;
+    else
+      {rptr_sync2_wrclk, rptr_sync1} <= {rptr_sync1, rptr_g};
+  end
+endmodule

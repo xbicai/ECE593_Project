@@ -1,0 +1,7 @@
+# Compile of fifomem.sv was successful.
+# Compile of rptr_empty.sv was successful.
+# Compile of sync_w2r.sv was successful.
+# Compile of top.sv was successful.
+# Compile of wptr_full.sv was successful.
+# Compile of sync_r2w.sv was successful.
+# 6 compiles, 0 failed with no errors.
