@@ -84,8 +84,22 @@ Coverage Report Summary Data by file
         Transitions                  0         0         0     100.0
     Toggle Bins                     72        72         0     100.0
 
+=================================================================================
+=== File: ./components/async_fifo_srv.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           13         3        10      23.0
+    Branches                        10         0        10       0.0
+    FEC Condition Terms              0         0         0     100.0
+    FEC Expression Terms             0         0         0     100.0
+    FSMs                                                       100.0
+        States                       0         0         0     100.0
+        Transitions                  0         0         0     100.0
+    Toggle Bins                      0         0         0     100.0
+
 
 TOTAL COVERGROUP COVERAGE: 88.8%  COVERGROUP TYPES: 1
 
-Total Coverage By File (code coverage only, filtered view): 100.0%
+Total Coverage By File (code coverage only, filtered view): 88.2%
 

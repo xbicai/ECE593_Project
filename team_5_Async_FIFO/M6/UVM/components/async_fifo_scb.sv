@@ -10,6 +10,7 @@ class async_fifo_scoreboard extends uvm_component;
 	// Instantiations
 	//----------------------------------------------------
 	uvm_analysis_imp #(async_fifo_pkt, async_fifo_scoreboard) scoreboard_port;
+	int logfile;
 	// Transaction Buffer
 	async_fifo_pkt tx[$];
 	// Reference Model
@@ -137,7 +138,7 @@ class async_fifo_scoreboard extends uvm_component;
 				if (curr_tx.r_pkt_f) begin
 					empty_sync1 <= 1;
 					empty_sync2 <= empty_sync1;
-					empty_local <= empty_sync2;
+					empty_local <= empty_sync1;
 				end
 			end else if (curr_tx.r_pkt_f) begin
 				empty_sync1 <= 0;
@@ -163,4 +164,18 @@ class async_fifo_scoreboard extends uvm_component;
 		end
 
 	endtask
+
+	// function void start_of_simulation_phase(uvm_phase phase);
+	// 	fifo_report_server server = new;
+	// 	super.start_of_simulation_phase(phase);
+	// 	`uvm_info("SCB CLASS", "Start of Simulation", UVM_NONE);
+	// 	logfile = $fopen("scb_logfile.txt","w");
+	// 	set_report_severity_action_hier(UVM_INFO, UVM_DISPLAY | UVM_LOG);
+	// 	set_report_severity_file_hier(UVM_INFO, logfile);
+	// 	set_report_severity_action_hier(UVM_ERROR, UVM_DISPLAY | UVM_LOG);
+	// 	set_report_severity_file_hier(UVM_ERROR, logfile);
+	// 	uvm_report_server::set_server( server );
+	// endfunction
+
+
 endclass

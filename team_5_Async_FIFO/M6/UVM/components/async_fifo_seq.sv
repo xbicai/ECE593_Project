@@ -39,12 +39,6 @@ class seq1_1_1 extends uvm_sequence #(async_fifo_pkt);
 			// void'(pkt.randomize() with {ainit == 1; wr_en == 0; rd_en == 0;});
 			// finish_item(pkt);
 			start_item(pkt);
-<<<<<<< HEAD
-			pkt.ainit = 1;
-			pkt.wr_en = 1;
-			pkt.rd_en = 0;
-			pkt.din = count;
-=======
 			void'(pkt.randomize() with {ainit == 1; wr_en == 1; rd_en == 0;});
 			// pkt.din = ++count;
 			finish_item(pkt);
@@ -53,20 +47,15 @@ class seq1_1_1 extends uvm_sequence #(async_fifo_pkt);
 		repeat(2) begin
 			start_item(pkt);
 			void'(pkt.randomize() with {ainit == 1; wr_en == 0; rd_en == 0;});
->>>>>>> f58b9d6... Adjusted UVM flag timing & scb verbosity
 			finish_item(pkt);
 			count++;
 		end
 
 		// Read 1's out
-<<<<<<< HEAD
-		repeat(`FIFO_DEPTH) begin
-=======
 		repeat(`FIFO_DEPTH+2) begin
 			// start_item(pkt);
 			// void'(pkt.randomize() with {ainit == 1; wr_en == 0; rd_en == 0;});
 			// finish_item(pkt);
->>>>>>> f58b9d6... Adjusted UVM flag timing & scb verbosity
 			start_item(pkt);
 			void'(pkt.randomize() with {ainit == 1; wr_en == 0; rd_en == 1;});
 			finish_item(pkt);

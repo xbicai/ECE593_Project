@@ -7,6 +7,7 @@ class test extends uvm_test;
 	`uvm_component_utils(test)
 
 	async_fifo_env env;
+	int logfile;
 	// basic tests
 	seq1_1_1 seq111;
 	seq1_1_2 seq112;
@@ -67,19 +68,11 @@ class test extends uvm_test;
 	// helper tasks
 	task create_seqs();
 		seq111 = seq1_1_1::type_id::create("seq111");
-<<<<<<< HEAD
-/* 		seq112 = seq1_1_2::type_id::create("seq112");
-		seq113 = seq1_1_3::type_id::create("seq113");
-		seq114 = seq1_1_4::type_id::create("seq114");
-		seq115 = seq1_1_5::type_id::create("seq115");
-		seq116 = seq1_1_6::type_id::create("seq116"); */
-=======
 		// seq112 = seq1_1_2::type_id::create("seq112");
 		// seq113 = seq1_1_3::type_id::create("seq113");
 		// seq114 = seq1_1_4::type_id::create("seq114");
 		// seq115 = seq1_1_5::type_id::create("seq115");
 		// seq116 = seq1_1_6::type_id::create("seq116");
->>>>>>> f58b9d6... Adjusted UVM flag timing & scb verbosity
 /*		seq117 = seq1_1_7::type_id::create("seq117");
 /* 
 		seq121 = seq1_2_1::type_id::create("seq121");
@@ -95,19 +88,6 @@ class test extends uvm_test;
 	task start_seqs();
 		repeat(2) begin
 		seq111.start(env.agnt.sqr);
-<<<<<<< HEAD
-		`SEQ_DELAY_S;
-/* 		seq112.start(env.agnt.sqr);
-		`SEQ_DELAY_L;
-		seq113.start(env.agnt.sqr);
-		`SEQ_DELAY_L;
-		seq114.start(env.agnt.sqr);
-		`SEQ_DELAY_S;
-		seq115.start(env.agnt.sqr);
-		`SEQ_DELAY_L;
-		seq116.start(env.agnt.sqr);
-		`SEQ_DELAY_S; */
-=======
 		#100;
 		end
 		// seq112.start(env.agnt.sqr);
@@ -120,7 +100,6 @@ class test extends uvm_test;
 		// `SEQ_DELAY_L;
 		// seq116.start(env.agnt.sqr);
 		// `SEQ_DELAY_S;
->>>>>>> f58b9d6... Adjusted UVM flag timing & scb verbosity
 /*		seq117.start(env.agnt.sqr);
 		`SEQ_DELAY_L;
  
@@ -140,4 +119,20 @@ class test extends uvm_test;
 		seq143.start(env.agnt.sqr);
 		`SEQ_DELAY_L; */
 	endtask
+
+	function void start_of_simulation_phase(uvm_phase phase);
+		fifo_report_server server = new;
+		super.start_of_simulation_phase(phase);
+		`uvm_info("SCB CLASS", "Start of Simulation", UVM_NONE);
+		logfile = $fopen("../docs/test_logfile.txt","w");
+
+		if (logfile)  $display("File was opened successfully : %0d", logfile);
+    	else     $display("File was NOT opened successfully : %0d", logfile);
+
+		set_report_severity_action_hier(UVM_INFO, UVM_DISPLAY | UVM_LOG);
+		set_report_severity_file_hier(UVM_INFO, logfile);
+		set_report_severity_action_hier(UVM_ERROR, UVM_DISPLAY | UVM_LOG);
+		set_report_severity_file_hier(UVM_ERROR, logfile);
+		uvm_report_server::set_server( server );
+	endfunction
 endclass
