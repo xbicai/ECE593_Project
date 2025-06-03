@@ -1,0 +1,162 @@
+UVM_INFO @ 60: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 60: uvm_test_top.env.scb [DETAIL ] 	Just wrote 161
+UVM_INFO @ 80: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 80: uvm_test_top.env.scb [DETAIL ] 	Just wrote  94
+UVM_INFO @ 100: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 100: uvm_test_top.env.scb [DETAIL ] 	Just wrote 122
+UVM_INFO @ 120: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 120: uvm_test_top.env.scb [DETAIL ] 	Just wrote 134
+UVM_INFO @ 140: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 140: uvm_test_top.env.scb [DETAIL ] 	Just wrote 124
+UVM_INFO @ 160: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 160: uvm_test_top.env.scb [DETAIL ] 	Just wrote  61
+UVM_INFO @ 180: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 180: uvm_test_top.env.scb [DETAIL ] 	Just wrote  45
+UVM_INFO @ 200: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 200: uvm_test_top.env.scb [DETAIL ] 	Just wrote 201
+UVM_INFO @ 220: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 220: uvm_test_top.env.scb [DETAIL ] 	Just wrote 208
+UVM_INFO @ 240: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 240: uvm_test_top.env.scb [DETAIL ] 	Just wrote 145
+UVM_INFO @ 260: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 260: uvm_test_top.env.scb [DETAIL ] 	Just wrote 255
+UVM_INFO @ 280: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 280: uvm_test_top.env.scb [DETAIL ] 	Just wrote  20
+UVM_INFO @ 300: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 300: uvm_test_top.env.scb [DETAIL ] 	Just wrote 116
+UVM_INFO @ 320: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 320: uvm_test_top.env.scb [DETAIL ] 	Just wrote  23
+UVM_INFO @ 340: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 340: uvm_test_top.env.scb [DETAIL ] 	Just wrote   6
+UVM_INFO @ 360: uvm_test_top.env.scb [DETAIL ] 	FIFO Full! Ignored  21
+UVM_INFO @ 380: uvm_test_top.env.scb [DETAIL ] 	FIFO Full! Ignored 143
+UVM_INFO @ 400: uvm_test_top.env.scb [DETAIL ] 	FIFO Full! Ignored 118
+UVM_INFO @ 460: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 460: uvm_test_top.env.scb [DETAIL ] 	Just read 161
+UVM_INFO @ 460: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=161, Ref=161
+UVM_INFO @ 480: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 480: uvm_test_top.env.scb [DETAIL ] 	Just read  94
+UVM_INFO @ 480: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 94, Ref= 94
+UVM_INFO @ 500: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 500: uvm_test_top.env.scb [DETAIL ] 	Just read 122
+UVM_INFO @ 500: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=122, Ref=122
+UVM_INFO @ 520: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 520: uvm_test_top.env.scb [DETAIL ] 	Just read 134
+UVM_INFO @ 520: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=134, Ref=134
+UVM_INFO @ 540: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 540: uvm_test_top.env.scb [DETAIL ] 	Just read 124
+UVM_INFO @ 540: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=124, Ref=124
+UVM_INFO @ 560: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 560: uvm_test_top.env.scb [DETAIL ] 	Just read  61
+UVM_INFO @ 560: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 61, Ref= 61
+UVM_INFO @ 580: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 580: uvm_test_top.env.scb [DETAIL ] 	Just read  45
+UVM_INFO @ 580: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 45, Ref= 45
+UVM_INFO @ 600: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 600: uvm_test_top.env.scb [DETAIL ] 	Just read 201
+UVM_INFO @ 600: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=201, Ref=201
+UVM_INFO @ 620: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 620: uvm_test_top.env.scb [DETAIL ] 	Just read 208
+UVM_INFO @ 620: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=208, Ref=208
+UVM_INFO @ 640: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 640: uvm_test_top.env.scb [DETAIL ] 	Just read 145
+UVM_INFO @ 640: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=145, Ref=145
+UVM_INFO @ 660: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 660: uvm_test_top.env.scb [DETAIL ] 	Just read 255
+UVM_INFO @ 660: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=255, Ref=255
+UVM_INFO @ 680: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 680: uvm_test_top.env.scb [DETAIL ] 	Just read  20
+UVM_INFO @ 680: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 20, Ref= 20
+UVM_INFO @ 700: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 700: uvm_test_top.env.scb [DETAIL ] 	Just read 116
+UVM_INFO @ 700: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=116, Ref=116
+UVM_INFO @ 720: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 720: uvm_test_top.env.scb [DETAIL ] 	Just read  23
+UVM_INFO @ 720: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 23, Ref= 23
+UVM_INFO @ 740: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 740: uvm_test_top.env.scb [DETAIL ] 	Just read   6
+UVM_INFO @ 740: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=  6, Ref=  6
+UVM_INFO @ 760: uvm_test_top.env.scb [DETAIL ] 	FIFO Empty!
+UVM_INFO @ 780: uvm_test_top.env.scb [DETAIL ] 	FIFO Empty!
+UVM_INFO @ 800: uvm_test_top.env.scb [DETAIL ] 	FIFO Empty!
+UVM_INFO @ 960: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 960: uvm_test_top.env.scb [DETAIL ] 	Just wrote 155
+UVM_INFO @ 980: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 980: uvm_test_top.env.scb [DETAIL ] 	Just wrote 249
+UVM_INFO @ 1000: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1000: uvm_test_top.env.scb [DETAIL ] 	Just wrote  77
+UVM_INFO @ 1020: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1020: uvm_test_top.env.scb [DETAIL ] 	Just wrote  10
+UVM_INFO @ 1040: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1040: uvm_test_top.env.scb [DETAIL ] 	Just wrote  39
+UVM_INFO @ 1060: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1060: uvm_test_top.env.scb [DETAIL ] 	Just wrote 216
+UVM_INFO @ 1080: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1080: uvm_test_top.env.scb [DETAIL ] 	Just wrote 214
+UVM_INFO @ 1100: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1100: uvm_test_top.env.scb [DETAIL ] 	Just wrote  13
+UVM_INFO @ 1120: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1120: uvm_test_top.env.scb [DETAIL ] 	Just wrote  32
+UVM_INFO @ 1140: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1140: uvm_test_top.env.scb [DETAIL ] 	Just wrote  63
+UVM_INFO @ 1160: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1160: uvm_test_top.env.scb [DETAIL ] 	Just wrote 107
+UVM_INFO @ 1180: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1180: uvm_test_top.env.scb [DETAIL ] 	Just wrote  83
+UVM_INFO @ 1200: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1200: uvm_test_top.env.scb [DETAIL ] 	Just wrote 204
+UVM_INFO @ 1220: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1220: uvm_test_top.env.scb [DETAIL ] 	Just wrote 199
+UVM_INFO @ 1240: uvm_test_top.env.scb [DETAIL ] Entered WRITE
+UVM_INFO @ 1240: uvm_test_top.env.scb [DETAIL ] 	Just wrote 251
+UVM_INFO @ 1260: uvm_test_top.env.scb [DETAIL ] 	FIFO Full! Ignored  67
+UVM_INFO @ 1280: uvm_test_top.env.scb [DETAIL ] 	FIFO Full! Ignored 183
+UVM_INFO @ 1300: uvm_test_top.env.scb [DETAIL ] 	FIFO Full! Ignored 170
+UVM_INFO @ 1360: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1360: uvm_test_top.env.scb [DETAIL ] 	Just read 155
+UVM_INFO @ 1360: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=155, Ref=155
+UVM_INFO @ 1380: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1380: uvm_test_top.env.scb [DETAIL ] 	Just read 249
+UVM_INFO @ 1380: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=249, Ref=249
+UVM_INFO @ 1400: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1400: uvm_test_top.env.scb [DETAIL ] 	Just read  77
+UVM_INFO @ 1400: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 77, Ref= 77
+UVM_INFO @ 1420: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1420: uvm_test_top.env.scb [DETAIL ] 	Just read  10
+UVM_INFO @ 1420: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 10, Ref= 10
+UVM_INFO @ 1440: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1440: uvm_test_top.env.scb [DETAIL ] 	Just read  39
+UVM_INFO @ 1440: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 39, Ref= 39
+UVM_INFO @ 1460: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1460: uvm_test_top.env.scb [DETAIL ] 	Just read 216
+UVM_INFO @ 1460: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=216, Ref=216
+UVM_INFO @ 1480: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1480: uvm_test_top.env.scb [DETAIL ] 	Just read 214
+UVM_INFO @ 1480: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=214, Ref=214
+UVM_INFO @ 1500: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1500: uvm_test_top.env.scb [DETAIL ] 	Just read  13
+UVM_INFO @ 1500: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 13, Ref= 13
+UVM_INFO @ 1520: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1520: uvm_test_top.env.scb [DETAIL ] 	Just read  32
+UVM_INFO @ 1520: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 32, Ref= 32
+UVM_INFO @ 1540: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1540: uvm_test_top.env.scb [DETAIL ] 	Just read  63
+UVM_INFO @ 1540: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 63, Ref= 63
+UVM_INFO @ 1560: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1560: uvm_test_top.env.scb [DETAIL ] 	Just read 107
+UVM_INFO @ 1560: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=107, Ref=107
+UVM_INFO @ 1580: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1580: uvm_test_top.env.scb [DETAIL ] 	Just read  83
+UVM_INFO @ 1580: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 83, Ref= 83
+UVM_INFO @ 1600: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1600: uvm_test_top.env.scb [DETAIL ] 	Just read 204
+UVM_INFO @ 1600: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=204, Ref=204
+UVM_INFO @ 1620: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1620: uvm_test_top.env.scb [DETAIL ] 	Just read 199
+UVM_INFO @ 1620: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=199, Ref=199
+UVM_INFO @ 1640: uvm_test_top.env.scb [DETAIL ] Entered READ
+UVM_INFO @ 1640: uvm_test_top.env.scb [DETAIL ] 	Just read 251
+UVM_INFO @ 1640: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=251, Ref=251
+UVM_INFO @ 1660: uvm_test_top.env.scb [DETAIL ] 	FIFO Empty!
+UVM_INFO @ 1680: uvm_test_top.env.scb [DETAIL ] 	FIFO Empty!
+UVM_INFO @ 1700: uvm_test_top.env.scb [DETAIL ] 	FIFO Empty!

@@ -7,7 +7,6 @@ class test extends uvm_test;
 	`uvm_component_utils(test)
 
 	async_fifo_env env;
-	int logfile;
 	// basic tests
 	seq1_1_1 seq111;
 	seq1_1_2 seq112;
@@ -121,18 +120,30 @@ class test extends uvm_test;
 	endtask
 
 	function void start_of_simulation_phase(uvm_phase phase);
-		fifo_report_server server = new;
+		// fifo_report_server server = new;
+		int logfile, scb_lf, scb_comp_lf;
+
 		super.start_of_simulation_phase(phase);
 		`uvm_info("SCB CLASS", "Start of Simulation", UVM_NONE);
-		logfile = $fopen("../docs/test_logfile.txt","w");
-
-		if (logfile)  $display("File was opened successfully : %0d", logfile);
-    	else     $display("File was NOT opened successfully : %0d", logfile);
+		logfile = $fopen("../docs/test_logfile.log","w");
+		scb_lf = $fopen("../docs/scb_logfile.log","w");
+		scb_comp_lf = $fopen("../docs/scb_comp_logfile.log","w");
+		
 
 		set_report_severity_action_hier(UVM_INFO, UVM_DISPLAY | UVM_LOG);
-		set_report_severity_file_hier(UVM_INFO, logfile);
-		set_report_severity_action_hier(UVM_ERROR, UVM_DISPLAY | UVM_LOG);
-		set_report_severity_file_hier(UVM_ERROR, logfile);
-		uvm_report_server::set_server( server );
+		set_report_severity_action_hier(UVM_ERROR, UVM_DISPLAY | UVM_COUNT | UVM_LOG);
+		set_report_id_action_hier("SCB_CLASS", UVM_LOG);
+		set_report_id_action_hier("DETAIL ", UVM_LOG);
+		
+
+		this.set_report_default_file_hier(logfile);
+		env.scb.set_report_severity_file_hier(UVM_INFO, scb_lf);
+		env.scb.set_report_id_file_hier("DETAIL ", scb_comp_lf);
+		env.scb.set_report_id_file_hier("COMPARE", scb_comp_lf);
+
+		// set_report_severity_action_hier(UVM_ERROR, UVM_DISPLAY | UVM_COUNT | UVM_LOG);
+		// set_report_severity_file_hier(UVM_ERROR, logfile);
+
+		// uvm_report_server::set_server( server );
 	endfunction
 endclass

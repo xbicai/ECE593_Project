@@ -1,0 +1,8 @@
+UVM_INFO @ 0: uvm_test_top [TEST_CLASS] Inside Run Phase!
+UVM_INFO @ 0: uvm_test_top.env [ENV_CLASS] Inside Run Phase!
+UVM_INFO @ 0: uvm_test_top.env.agnt [AGNT_CLASS] Inside Run Phase!
+UVM_INFO @ 0: uvm_test_top.env.agnt.mon [MON_CLASS] Inside Run Phase!
+UVM_INFO @ 0: uvm_test_top.env.agnt.drv [DRV_CLASS] Inside Run Phase!
+UVM_INFO @ 0: uvm_test_top.env.agnt.sqr@@seq111 [SEQ_BODY] Starting test 1.1.1 - standard write/read
+UVM_INFO @ 900: uvm_test_top.env.agnt.sqr@@seq111 [SEQ_BODY] Starting test 1.1.1 - standard write/read
+UVM_INFO @ 1800: uvm_test_top.env.cov [uvm_test_top.env.cov] Coverage is         89

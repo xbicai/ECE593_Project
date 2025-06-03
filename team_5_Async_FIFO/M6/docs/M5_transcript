@@ -1,5 +1,5 @@
-# vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M5_transcript "+UVM_VERBOSITY=UVM_LOW" 
-# Start time: 20:46:33 on Jun 02,2025
+# vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M5_transcript "+UVM_VERBOSITY=UVM_HIGH" 
+# Start time: 21:26:36 on Jun 02,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: ./components/async_fifo_srv.sv(9): (vopt-2250) Function "compose_message" has no return value assignment.
 # //  Questa Sim-64
@@ -51,7 +51,21 @@
 # 
 #       (Specify +UVM_NO_RELNOTES to turn off this notice)
 # 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test test...
+# UVM_INFO @ 0: uvm_test_top [TEST_CLASS] Inside Constructor!
+# UVM_INFO @ 0: uvm_test_top.env [ENV_CLASS] Inside Constructor!
+# UVM_INFO @ 0: uvm_test_top.env.scb [SCB_CLASS] Inside Constructor!
+# UVM_INFO @ 0: uvm_test_top.env.agnt [AGNT_CLASS] Inside Constructor!
+# UVM_INFO @ 0: uvm_test_top.env.agnt.sqr [SQR_CLASS] Inside Constructor!
+# UVM_INFO @ 0: uvm_test_top.env.agnt.drv [DRV_CLASS] Inside Constructor!
+# UVM_INFO @ 0: uvm_test_top.env.agnt.mon [MON_CLASS] Inside Build Phase!
+# UVM_INFO @ 0: uvm_test_top.env.agnt.sqr [SQR_CLASS] Inside Build Phase!
+# UVM_INFO @ 0: uvm_test_top.env.scb [SCB_CLASS] Inside Build Phase!
+# UVM_INFO @ 0: uvm_test_top.env.agnt.sqr [SQR_CLASS] Inside Connect Phase!
+# UVM_INFO @ 0: uvm_test_top.env.agnt [AGNT_CLASS] Inside Connect Phase!
+# UVM_INFO @ 0: uvm_test_top.env [ENV_CLASS] Inside Connect Phase!
 # UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 # --------------------------------------------------------------
 # Name                       Type                    Size  Value
@@ -77,94 +91,69 @@
 #       scoreboard_port      uvm_analysis_imp        -     @673 
 # --------------------------------------------------------------
 # 
-# Constructing report server fifo_report_server
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] End Of Elaboration
 # UVM_INFO @ 0: uvm_test_top [SCB CLASS] Start of Simulation
-# File was opened successfully : -2147483645
+# UVM_INFO @ 0: uvm_test_top [TEST_CLASS] Inside Run Phase!
+# UVM_INFO @ 0: uvm_test_top.env [ENV_CLASS] Inside Run Phase!
+# UVM_INFO @ 0: uvm_test_top.env.agnt [AGNT_CLASS] Inside Run Phase!
+# UVM_INFO @ 0: uvm_test_top.env.agnt.mon [MON_CLASS] Inside Run Phase!
+# UVM_INFO @ 0: uvm_test_top.env.agnt.drv [DRV_CLASS] Inside Run Phase!
 # UVM_INFO @ 0: uvm_test_top.env.agnt.sqr@@seq111 [SEQ_BODY] Starting test 1.1.1 - standard write/read
-# 
-# UVM_ERROR @ 80: uvm_test_top.env.scb [COMPARE] Empty Flag Mismatch! DUT=1, Ref=0
-# 
 # UVM_INFO @ 460: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=161, Ref=161
-# 
 # UVM_INFO @ 480: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 94, Ref= 94
-# 
 # UVM_INFO @ 500: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=122, Ref=122
-# 
 # UVM_INFO @ 520: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=134, Ref=134
-# 
 # UVM_INFO @ 540: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=124, Ref=124
-# 
 # UVM_INFO @ 560: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 61, Ref= 61
-# 
 # UVM_INFO @ 580: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 45, Ref= 45
-# 
 # UVM_INFO @ 600: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=201, Ref=201
-# 
 # UVM_INFO @ 620: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=208, Ref=208
-# 
 # UVM_INFO @ 640: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=145, Ref=145
-# 
 # UVM_INFO @ 660: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=255, Ref=255
-# 
 # UVM_INFO @ 680: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 20, Ref= 20
-# 
 # UVM_INFO @ 700: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=116, Ref=116
-# 
 # UVM_INFO @ 720: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 23, Ref= 23
-# 
 # UVM_INFO @ 740: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=  6, Ref=  6
-# 
 # UVM_INFO @ 900: uvm_test_top.env.agnt.sqr@@seq111 [SEQ_BODY] Starting test 1.1.1 - standard write/read
-# 
-# UVM_ERROR @ 980: uvm_test_top.env.scb [COMPARE] Empty Flag Mismatch! DUT=1, Ref=0
-# 
 # UVM_INFO @ 1360: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=155, Ref=155
-# 
 # UVM_INFO @ 1380: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=249, Ref=249
-# 
 # UVM_INFO @ 1400: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 77, Ref= 77
-# 
 # UVM_INFO @ 1420: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 10, Ref= 10
-# 
 # UVM_INFO @ 1440: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 39, Ref= 39
-# 
 # UVM_INFO @ 1460: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=216, Ref=216
-# 
 # UVM_INFO @ 1480: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=214, Ref=214
-# 
 # UVM_INFO @ 1500: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 13, Ref= 13
-# 
 # UVM_INFO @ 1520: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 32, Ref= 32
-# 
 # UVM_INFO @ 1540: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 63, Ref= 63
-# 
 # UVM_INFO @ 1560: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=107, Ref=107
-# 
 # UVM_INFO @ 1580: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT= 83, Ref= 83
-# 
 # UVM_INFO @ 1600: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=204, Ref=204
-# 
 # UVM_INFO @ 1620: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=199, Ref=199
-# 
 # UVM_INFO @ 1640: uvm_test_top.env.scb [COMPARE] Transction Passed! DUT=251, Ref=251
-# 
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1800: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# 
 # UVM_INFO @ 1800: uvm_test_top.env.cov [uvm_test_top.env.cov] Coverage is         89
-# 
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   37
+# UVM_INFO :  250
 # UVM_WARNING :    0
-# UVM_ERROR :    2
+# UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [COMPARE]    32
+# [AGNT_CLASS]     3
+# [COMPARE]    30
+# [DETAIL ]   132
+# [DRV_CLASS]     2
+# [ENV_CLASS]     3
+# [MON_CLASS]     2
+# [Questa UVM]     3
 # [RNTST]     1
 # [SCB CLASS]     1
+# [SCB_CLASS]    63
 # [SEQ_BODY]     2
+# [SQR_CLASS]     3
+# [TEST_CLASS]     2
 # [TEST_DONE]     1
 # [UVMTOP]     1
 # [uvm_test_top.env.cov]     1
@@ -172,5 +161,5 @@
 #    Time: 1800 ns  Iteration: 54  Instance: /custom_async_fifo_tb
 # Break in Task uvm_pkg/uvm_root::run_test at /pkgs/mentor/questa/10.6b/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 # Stopped at /pkgs/mentor/questa/10.6b/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-# End time: 20:46:37 on Jun 02,2025, Elapsed time: 0:00:04
+# End time: 21:26:40 on Jun 02,2025, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 1

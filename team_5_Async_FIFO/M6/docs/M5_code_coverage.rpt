@@ -89,7 +89,7 @@ Coverage Report Summary Data by file
 =================================================================================
     Enabled Coverage            Active      Hits    Misses % Covered
     ----------------            ------      ----    ------ ---------
-    Stmts                           13         3        10      23.0
+    Stmts                           13         0        13       0.0
     Branches                        10         0        10       0.0
     FEC Condition Terms              0         0         0     100.0
     FEC Expression Terms             0         0         0     100.0
@@ -101,5 +101,5 @@ Coverage Report Summary Data by file
 
 TOTAL COVERGROUP COVERAGE: 88.8%  COVERGROUP TYPES: 1
 
-Total Coverage By File (code coverage only, filtered view): 88.2%
+Total Coverage By File (code coverage only, filtered view): 87.0%
 

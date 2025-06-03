@@ -18,7 +18,7 @@ vlog async_fifo_interface.sv
 vlog async_fifo_tb.sv
 
 ## Simulate Testbench
-vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M5_transcript +UVM_VERBOSITY=UVM_LOW
+vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesfx" -logfile ../docs/M5_transcript +UVM_VERBOSITY=UVM_HIGH
 
 # This is needed to correctly output coverage when UVM tb completes
 onfinish stop

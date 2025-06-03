@@ -83,27 +83,27 @@ class async_fifo_scoreboard extends uvm_component;
 
 			// Track Write
 			if (curr_tx.wr_en && !curr_tx.fifo_full) begin
-				`uvm_info("COMPARE", $sformatf("Entered WRITE"), UVM_MEDIUM)
+				`uvm_info("DETAIL ", $sformatf("Entered WRITE"), UVM_MEDIUM)
 				// Write to model
 				if (!curr_tx.fifo_full) begin
 					ref_model.push_back(curr_tx.din);
-					`uvm_info("COMPARE", $sformatf("\tJust wrote %d", curr_tx.din), UVM_MEDIUM)
+					`uvm_info("DETAIL ", $sformatf("\tJust wrote %d", curr_tx.din), UVM_MEDIUM)
 				end
 				`uvm_info("SCB_CLASS", $sformatf("Write! Fifo=%d", ref_model.size()), UVM_HIGH)
 				// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, wr=%d, data=%d, full=%d", curr_tx.ainit, curr_tx.wr_en, curr_tx.din, curr_tx.fifo_full), UVM_HIGH)
 			end else if (curr_tx.wr_en) begin
-				`uvm_info("COMPARE", $sformatf("\tFIFO Full! Ignored %d", curr_tx.din), UVM_MEDIUM)
+				`uvm_info("DETAIL ", $sformatf("\tFIFO Full! Ignored %d", curr_tx.din), UVM_MEDIUM)
 			end
 
 			// Track Read
 			if (curr_tx.rd_en && !curr_tx.fifo_empty) begin
-				`uvm_info("COMPARE", $sformatf("Entered READ"), UVM_MEDIUM)
+				`uvm_info("DETAIL ", $sformatf("Entered READ"), UVM_MEDIUM)
 				// Read from Model
 				// `uvm_info("SCB_CLASS", $sformatf("ainit=%d, rd=%d, data=%d, full=%d", curr_tx.ainit, curr_tx.rd_en, curr_tx.dout, curr_tx.fifo_empty), UVM_HIGH)
 				expected = ref_model.pop_front();
 				`uvm_info("SCB_CLASS", $sformatf("Read! Fifo=%d", ref_model.size()), UVM_HIGH)
 				actual = curr_tx.dout;
-				`uvm_info("COMPARE", $sformatf("\tJust read %d", curr_tx.dout), UVM_MEDIUM)
+				`uvm_info("DETAIL ", $sformatf("\tJust read %d", curr_tx.dout), UVM_MEDIUM)
 
 				// Compare model to DUT
 				if (actual != expected) begin
@@ -112,7 +112,7 @@ class async_fifo_scoreboard extends uvm_component;
 				end else
 					`uvm_info("COMPARE", $sformatf("Transction Passed! DUT=%d, Ref=%d", actual, expected), UVM_LOW)
 			end	else if (curr_tx.rd_en) begin
-				`uvm_info("COMPARE", $sformatf("\tFIFO Empty!"), UVM_MEDIUM)
+				`uvm_info("DETAIL ", $sformatf("\tFIFO Empty!"), UVM_MEDIUM)
 			end
 			
 
@@ -142,7 +142,7 @@ class async_fifo_scoreboard extends uvm_component;
 				end
 			end else if (curr_tx.r_pkt_f) begin
 				empty_sync1 <= 0;
-				empty_sync2 <= 0;
+				empty_sync2 <= empty_sync1;
 				empty_local <= empty_sync2;
 			end
 
@@ -164,18 +164,6 @@ class async_fifo_scoreboard extends uvm_component;
 		end
 
 	endtask
-
-	// function void start_of_simulation_phase(uvm_phase phase);
-	// 	fifo_report_server server = new;
-	// 	super.start_of_simulation_phase(phase);
-	// 	`uvm_info("SCB CLASS", "Start of Simulation", UVM_NONE);
-	// 	logfile = $fopen("scb_logfile.txt","w");
-	// 	set_report_severity_action_hier(UVM_INFO, UVM_DISPLAY | UVM_LOG);
-	// 	set_report_severity_file_hier(UVM_INFO, logfile);
-	// 	set_report_severity_action_hier(UVM_ERROR, UVM_DISPLAY | UVM_LOG);
-	// 	set_report_severity_file_hier(UVM_ERROR, logfile);
-	// 	uvm_report_server::set_server( server );
-	// endfunction
 
 
 endclass
