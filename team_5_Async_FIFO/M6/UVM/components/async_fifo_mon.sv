@@ -6,7 +6,8 @@
 class async_fifo_mon extends uvm_monitor;
 	`uvm_component_utils(async_fifo_mon)
 
-	async_fifo_pkt pkt;
+	async_fifo_pkt w_pkt;
+	async_fifo_pkt r_pkt;
 	virtual async_fifo_intf #(.SIZE(`FIFO_WIDTH)) vif;
 	uvm_analysis_port #(async_fifo_pkt) monitor_port;
 
@@ -37,31 +38,47 @@ class async_fifo_mon extends uvm_monitor;
 		super.run_phase(phase);
 		`uvm_info("MON_CLASS", "Inside Run Phase!", UVM_HIGH)
 	
-		forever begin
-			pkt = async_fifo_pkt::type_id::create("pkt");
-			
-			fork
-				begin : Reset
-					pkt.ainit 				= vif.ainit;
-				end
-				begin : Write
-					@(posedge vif.clk_wr);
-					pkt.wr_en 				= vif.req_wr;
-					pkt.din 				= vif.data_wr;
-					pkt.fifo_full 			= vif.fifo_full;
-					pkt.fifo_almost_full  	= vif.fifo_almost_full;
-				end
-				begin : Read
-					@(posedge vif.clk_rd);
-					pkt.rd_en 				= vif.req_rd;
-					pkt.dout 				= vif.data_rd;
-					pkt.fifo_empty 			= vif.fifo_empty;
-					pkt.fifo_almost_empty 	= vif.fifo_almost_empty;
-				end
-			join
-			
-			// `uvm_info("MON_CLASS", $sformatf("ainit=%d, rd=%d, wr=%d, data_wr=%d, data_rd=%d", pkt.ainit, pkt.rd_en, pkt.wr_en, pkt.din, pkt.dout), UVM_HIGH)
-			monitor_port.write(pkt);
-		end
+		fork
+			forever begin
+				w_pkt = async_fifo_pkt::type_id::create("w_pkt");
+				w_pkt.w_pkt_f = 1;
+				
+				w_pkt.ainit 				= vif.ainit;
+				@(negedge vif.clk_wr);
+				w_pkt.wr_en 			= vif.req_wr;
+				w_pkt.din 				= vif.data_wr;
+				w_pkt.fifo_full 		= vif.fifo_full;
+				w_pkt.fifo_almost_full  = vif.fifo_almost_full;
+				// w_pkt.rd_en 			= 0;
+				// w_pkt.dout 				= 0;
+				r_pkt.rd_en 			= vif.req_rd;
+				r_pkt.dout 				= vif.data_rd;
+				w_pkt.fifo_empty 		= vif.fifo_empty;
+				w_pkt.fifo_almost_empty = vif.fifo_almost_empty;
+				
+				// `uvm_info("MON_CLASS", $sformatf("ainit=%d, rd=%d, wr=%d, data_wr=%d, data_rd=%d", pkt.ainit, pkt.rd_en, pkt.wr_en, pkt.din, pkt.dout), UVM_HIGH)
+				monitor_port.write(w_pkt);
+			end
+			forever begin
+				r_pkt = async_fifo_pkt::type_id::create("r_pkt");
+				r_pkt.r_pkt_f = 1;
+				
+				@(negedge vif.clk_rd);
+				r_pkt.ainit 			= vif.ainit;
+				// w_pkt.wr_en 			= 0;
+				// w_pkt.din 				= 0;
+				w_pkt.wr_en 			= vif.req_wr;
+				w_pkt.din 				= vif.data_wr;
+				w_pkt.fifo_full 		= vif.fifo_full;
+				w_pkt.fifo_almost_full  = vif.fifo_almost_full;
+				r_pkt.rd_en 			= vif.req_rd;
+				r_pkt.dout 				= vif.data_rd;
+				r_pkt.fifo_empty 		= vif.fifo_empty;
+				r_pkt.fifo_almost_empty = vif.fifo_almost_empty;
+				
+				// `uvm_info("MON_CLASS", $sformatf("ainit=%d, rd=%d, wr=%d, data_wr=%d, data_rd=%d", pkt.ainit, pkt.rd_en, pkt.wr_en, pkt.din, pkt.dout), UVM_HIGH)
+				monitor_port.write(r_pkt);
+			end
+		join_none
 	endtask
 endclass

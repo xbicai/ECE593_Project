@@ -4,3 +4,4 @@
 `define FIFO_DEPTH	2**`FIFO_ADDR
 `define SEQ_DELAY_L #500
 `define SEQ_DELAY_S #100
+// `define BUG 1

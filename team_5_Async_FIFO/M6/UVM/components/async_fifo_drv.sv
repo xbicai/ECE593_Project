@@ -45,13 +45,17 @@ class async_fifo_drv extends uvm_driver #(async_fifo_pkt);
 					//`uvm_info("DRIVE_RUN", $sformatf("DRIVING: rst=%d", pkt.ainit), UVM_LOW)
 				end
 				begin : Write
-					@(posedge vif.clk_wr);
+					@(negedge vif.clk_wr);
 					vif.req_wr 	<= pkt.wr_en;
 					vif.data_wr <= pkt.din;
+					@(negedge vif.clk_wr);
+					vif.req_wr 	<= 0;
 				end
 				begin : Read
-					@(posedge vif.clk_rd);
+					@(negedge vif.clk_rd);
 					vif.req_rd 	<= pkt.rd_en;
+					@(negedge vif.clk_rd);
+					vif.req_rd 	<= 0;
 				end
 			join
 	

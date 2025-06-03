@@ -9,6 +9,9 @@ class async_fifo_pkt extends uvm_sequence_item;
 	//----------------------------------------------------
 	// Instantiation
 	//----------------------------------------------------
+	// Special Flags
+	logic w_pkt_f = 0;
+	logic r_pkt_f = 0;
 	// Inputs
 	rand logic        	wr_en;
 	rand logic        	rd_en;

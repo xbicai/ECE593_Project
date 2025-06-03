@@ -67,11 +67,19 @@ class test extends uvm_test;
 	// helper tasks
 	task create_seqs();
 		seq111 = seq1_1_1::type_id::create("seq111");
+<<<<<<< HEAD
 /* 		seq112 = seq1_1_2::type_id::create("seq112");
 		seq113 = seq1_1_3::type_id::create("seq113");
 		seq114 = seq1_1_4::type_id::create("seq114");
 		seq115 = seq1_1_5::type_id::create("seq115");
 		seq116 = seq1_1_6::type_id::create("seq116"); */
+=======
+		// seq112 = seq1_1_2::type_id::create("seq112");
+		// seq113 = seq1_1_3::type_id::create("seq113");
+		// seq114 = seq1_1_4::type_id::create("seq114");
+		// seq115 = seq1_1_5::type_id::create("seq115");
+		// seq116 = seq1_1_6::type_id::create("seq116");
+>>>>>>> f58b9d6... Adjusted UVM flag timing & scb verbosity
 /*		seq117 = seq1_1_7::type_id::create("seq117");
 /* 
 		seq121 = seq1_2_1::type_id::create("seq121");
@@ -85,7 +93,9 @@ class test extends uvm_test;
 	endtask
 
 	task start_seqs();
+		repeat(2) begin
 		seq111.start(env.agnt.sqr);
+<<<<<<< HEAD
 		`SEQ_DELAY_S;
 /* 		seq112.start(env.agnt.sqr);
 		`SEQ_DELAY_L;
@@ -97,6 +107,20 @@ class test extends uvm_test;
 		`SEQ_DELAY_L;
 		seq116.start(env.agnt.sqr);
 		`SEQ_DELAY_S; */
+=======
+		#100;
+		end
+		// seq112.start(env.agnt.sqr);
+		// `SEQ_DELAY_L;
+		// seq113.start(env.agnt.sqr);
+		// `SEQ_DELAY_L;
+		// seq114.start(env.agnt.sqr);
+		// `SEQ_DELAY_S;
+		// seq115.start(env.agnt.sqr);
+		// `SEQ_DELAY_L;
+		// seq116.start(env.agnt.sqr);
+		// `SEQ_DELAY_S;
+>>>>>>> f58b9d6... Adjusted UVM flag timing & scb verbosity
 /*		seq117.start(env.agnt.sqr);
 		`SEQ_DELAY_L;
  

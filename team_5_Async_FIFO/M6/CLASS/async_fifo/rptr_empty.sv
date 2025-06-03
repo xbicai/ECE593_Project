@@ -36,10 +36,10 @@ module custom_rptr_empty (
   always_ff @(posedge rclk_i or negedge rrst_n_i) begin
     if (~rrst_n_i) begin
       fifo_empty <= 1'b1;
-	  fifo_almost_empty <= 1'b1;
+	    fifo_almost_empty <= 1'b1;
 	end else begin
-      fifo_empty <= (rgray_next == wptr_sync2_rdclk);
-	  fifo_almost_empty <= fifo_almost_empty_val;
+      fifo_empty <= fifo_empty_val;
+	    fifo_almost_empty <= fifo_almost_empty_val;
 	end
   end
 

@@ -1,3 +1,5 @@
+// `define BUG
+
 module custom_fifomem (
   wen, fifo_full, wclk_i,
   wr_addr, rd_addr,
@@ -17,23 +19,20 @@ module custom_fifomem (
 
   logic [DATASIZE-1:0] mem_array [0:DEPTH-1];
 
-  //assign dout = mem_array[rd_addr];
+  `ifdef BUG
+  assign dout = mem_array[rd_addr];
+  `else
   always_ff @(posedge rclk_i) begin
     if (ren & ~fifo_empty) begin
       dout <= mem_array[rd_addr];
     end
-    else begin
-      dout <= 1'bx;
-    end
   end
+  `endif
 
 
   always_ff @(posedge wclk_i) begin
     if (wen & ~fifo_full)
       mem_array[wr_addr] <= din;
-    else begin
-      mem_array[wr_addr] <= mem_array[wr_addr];
-    end
   end
 
 endmodule

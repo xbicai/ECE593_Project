@@ -36,10 +36,10 @@ module custom_wptr_full (
 
   always_ff @(posedge wclk_i or negedge wrst_n_i) begin
     if (~wrst_n_i) begin
-      fifo_full <= 1'b1;
-	    fifo_almost_full <= 1'b1;
+      fifo_full <= 1'b0;
+	    fifo_almost_full <= 1'b0;
 	end else begin
-      fifo_full <= (wgray_next == {~rptr_sync2_wrclk[ADDRSIZE:ADDRSIZE-1], rptr_sync2_wrclk[ADDRSIZE-2:0]});;
+      fifo_full <= fifo_full_val;
 	    fifo_almost_full <= fifo_almost_full_val;
 	end
   end
