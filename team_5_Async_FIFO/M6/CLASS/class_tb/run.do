@@ -37,6 +37,7 @@ coverage exclude -src ./components/transaction.sv
 
 run -all
 
-coverage report -details -code bcesft -output ../../docs/CLASS_docs/CLASS_coverage.rpt
+coverage report -cvg -code bcesft -output ../../docs/CLASS_docs/CLASS_coverage.rpt
+coverage report -details -cvg -assert -output ../../docs/CLASS_docs/CLASS_functional.rpt
 
 exit
