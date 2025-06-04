@@ -20,6 +20,13 @@ class generator#(parameter DATA = 8, ADDR = 4);
     task main ();
         $display($time, "\tGenerator started");
         split = 0;
+        // some specific tests for functional cov
+        tx = new();
+        void'(tx.randomize() with {data_wr == '1; req_wr == 1; req_rd == 0;});
+        gen2drive.put(tx);
+        tx = new();
+        void'(tx.randomize() with {data_wr == '0; req_wr == 1; req_rd == 0;});
+        gen2drive.put(tx);
         // test repeat: simple repeated random input along with random requests
         repeat(tx_count) begin
             tx = new();                     // generating random input and random requests
