@@ -1,5 +1,5 @@
 # vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesft" -logfile ../../docs/CLASS_docs/CLASS_tb_transcript.txt 
-# Start time: 22:33:48 on Jun 03,2025
+# Start time: 22:48:29 on Jun 03,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: ./async_fifo_tb.sv(54): (vopt-2685) [TFMPC] - Too few port connections for 'iDUT'.  Expected 12, found 10.
 # ** Warning: ./async_fifo_tb.sv(54): (vopt-2718) [TFMPC] - Missing connection for port 'fifo_almost_empty'.
@@ -32,6 +32,11 @@
 # Loading work.custom_rptr_empty(fast)
 # Loading work.custom_wptr_full(fast)
 # Loading work.test(fast)
+# coverage exclude -src ./components/package.sv
+# ** UI-Msg: (vsim-4053) File './components/package.sv' was not found or has null coverage data.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
 #                    0	reset started
 #                    5	reset ended
 #                    5	Generator started
@@ -285,5 +290,5 @@
 #    Time: 2786 ns  Iteration: 2  Instance: /custom_async_fifo_tb/test
 # Break in Task new_proj_pkg/environment::run at ./components/env.sv line 75
 # Stopped at ./components/env.sv line 75
-# End time: 22:33:50 on Jun 03,2025, Elapsed time: 0:00:02
+# End time: 22:48:31 on Jun 03,2025, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 3

@@ -125,9 +125,9 @@ class test extends uvm_test;
 
 		super.start_of_simulation_phase(phase);
 		`uvm_info("SCB CLASS", "Start of Simulation", UVM_NONE);
-		logfile = $fopen("../docs/test_logfile.log","w");
-		scb_lf = $fopen("../docs/scb_logfile.log","w");
-		scb_comp_lf = $fopen("../docs/scb_comp_logfile.log","w");
+		logfile = $fopen("../docs/UVM_docs/test_logfile.log","w");
+		scb_lf = $fopen("../docs/UVM_docs/scb_logfile.log","w");
+		scb_comp_lf = $fopen("../docs/UVM_docs/scb_comp_logfile.log","w");
 		
 
 		set_report_severity_action_hier(UVM_INFO, UVM_DISPLAY | UVM_LOG);

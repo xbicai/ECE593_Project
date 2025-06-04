@@ -1,0 +1,81 @@
+Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_sync_r2w
+=== Design Unit: work.custom_sync_r2w
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+    Statements                       3         3         0   100.00%
+    Toggles                         34        34         0   100.00%
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_sync_w2r
+=== Design Unit: work.custom_sync_w2r
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+    Statements                       3         3         0   100.00%
+    Toggles                         34        34         0   100.00%
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_fifomem
+=== Design Unit: work.custom_fifomem
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+    Conditions                       4         4         0   100.00%
+    Statements                       6         6         0   100.00%
+    Toggles                         60        60         0   100.00%
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_rptr_empty
+=== Design Unit: work.custom_rptr_empty
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+    Expressions                      3         3         0   100.00%
+    Statements                      13        13         0   100.00%
+    Toggles                         72        72         0   100.00%
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_wptr_full
+=== Design Unit: work.custom_wptr_full
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+    Expressions                      3         3         0   100.00%
+    Statements                      13        13         0   100.00%
+    Toggles                         72        72         0   100.00%
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT
+=== Design Unit: work.custom_async_fifo
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        108       108         0   100.00%
+
+=================================================================================
+=== Instance: /new_proj_pkg
+=== Design Unit: work.new_proj_pkg
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         0        10     0.00%
+    Conditions                       2         0         2     0.00%
+    Covergroups                      1        na        na    88.88%
+        Coverpoints/Crosses          9        na        na        na
+            Covergroup Bins         22        19         3    86.36%
+    Statements                      13         0        13     0.00%
+
+
+TOTAL COVERGROUP COVERAGE: 88.88%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 81.93%
+

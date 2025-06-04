@@ -1,4 +1,4 @@
-`define BUG
+// `define ALT
 
 module custom_fifomem (
   wen, fifo_full, wclk_i,
@@ -19,7 +19,7 @@ module custom_fifomem (
 
   logic [DATASIZE-1:0] mem_array [0:DEPTH-1];
 
-  `ifdef BUG
+  `ifdef ALT
   assign dout = mem_array[rd_addr];
   `else
   always_ff @(posedge rclk_i) begin

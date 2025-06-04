@@ -1,4 +1,4 @@
-+define+BUG ../async_fifo/fifomem.sv
++define+ALT ../async_fifo/fifomem.sv
 ../async_fifo/rptr_empty.sv
 ../async_fifo/sync_r2w.sv
 ../async_fifo/sync_w2r.sv
