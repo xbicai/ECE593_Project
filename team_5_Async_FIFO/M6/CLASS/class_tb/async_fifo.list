@@ -1,0 +1,10 @@
+../async_fifo/fifomem.sv
+../async_fifo/rptr_empty.sv
+../async_fifo/sync_r2w.sv
+../async_fifo/sync_w2r.sv
+../async_fifo/wptr_full.sv
+../async_fifo/top.sv
+
+./components/package.sv
+
+./async_fifo_tb.sv

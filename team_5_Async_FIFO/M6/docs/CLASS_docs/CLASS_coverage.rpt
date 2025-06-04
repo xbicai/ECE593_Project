@@ -1,0 +1,393 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_sync_r2w
+=== Design Unit: work.custom_sync_r2w
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /custom_async_fifo_tb/iDUT/u_sync_r2w
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/sync_r2w.sv
+------------------------------------IF Branch------------------------------------
+    15                                       195     Count coming in to IF
+    15              1                          2     
+    17              1                        193     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /custom_async_fifo_tb/iDUT/u_sync_r2w --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/sync_r2w.sv
+    14              1                        195     
+    16              1                          2     
+    18              1                        193     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         34        34         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /custom_async_fifo_tb/iDUT/u_sync_r2w --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         17 
+Toggled Node Count   =         17 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (34 of 34 bins)
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_sync_w2r
+=== Design Unit: work.custom_sync_w2r
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /custom_async_fifo_tb/iDUT/u_sync_w2r
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/sync_w2r.sv
+------------------------------------IF Branch------------------------------------
+    15                                       152     Count coming in to IF
+    15              1                          2     
+    17              1                        150     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /custom_async_fifo_tb/iDUT/u_sync_w2r --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/sync_w2r.sv
+    14              1                        152     
+    16              1                          2     
+    18              1                        150     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         34        34         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /custom_async_fifo_tb/iDUT/u_sync_w2r --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         17 
+Toggled Node Count   =         17 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (34 of 34 bins)
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_fifomem
+=== Design Unit: work.custom_fifomem
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /custom_async_fifo_tb/iDUT/u_fifomem
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/fifomem.sv
+------------------------------------IF Branch------------------------------------
+    35                                       237     Count coming in to IF
+    35              1                        101     
+    37              1                        136     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /custom_async_fifo_tb/iDUT/u_fifomem --
+
+  File ../async_fifo/fifomem.sv
+----------------Focused Condition View-------------------
+Line       35 Item    1  (wen & ~fifo_full)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /custom_async_fifo_tb/iDUT/u_fifomem --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/fifomem.sv
+    23              1                        189     
+    34              1                        237     
+    36              1                        101     
+    38              1                        136     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         60        60         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /custom_async_fifo_tb/iDUT/u_fifomem --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         30 
+Toggled Node Count   =         30 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (60 of 60 bins)
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_rptr_empty
+=== Design Unit: work.custom_rptr_empty
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /custom_async_fifo_tb/iDUT/u_rptr_empty
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/rptr_empty.sv
+------------------------------------IF Branch------------------------------------
+    23                                       139     Count coming in to IF
+    23              1                          2     
+    25              1                        137     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    37                                        31     Count coming in to IF
+    37              1                          2     
+    40              1                         29     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /custom_async_fifo_tb/iDUT/u_rptr_empty --
+
+  File ../async_fifo/rptr_empty.sv
+----------------Focused Expression View-----------------
+Line       33 Item    1  (rgray_next == wptr_sync2_rdclk)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       34 Item    1  (((rgray_next + 1) == wptr_sync2_rdclk) || fifo_empty_val)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13        13         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /custom_async_fifo_tb/iDUT/u_rptr_empty --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/rptr_empty.sv
+    22              1                        139     
+    24              1                          2     
+    26              1                        137     
+    29              1                         89     
+    30              1                        195     
+    31              1                        180     
+    33              1                        222     
+    34              1                        222     
+    36              1                         31     
+    38              1                          2     
+    39              1                          2     
+    41              1                         29     
+    42              1                         29     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         72        72         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /custom_async_fifo_tb/iDUT/u_rptr_empty --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         36 
+Toggled Node Count   =         36 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (72 of 72 bins)
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT/u_wptr_full
+=== Design Unit: work.custom_wptr_full
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         4         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /custom_async_fifo_tb/iDUT/u_wptr_full
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/wptr_full.sv
+------------------------------------IF Branch------------------------------------
+    24                                       156     Count coming in to IF
+    24              1                          2     
+    26              1                        154     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                        80     Count coming in to IF
+    38              1                          2     
+    41              1                         78     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /custom_async_fifo_tb/iDUT/u_wptr_full --
+
+  File ../async_fifo/wptr_full.sv
+----------------Focused Expression View-----------------
+Line       34 Item    1  (wgray_next == {~rptr_sync2_wrclk[4:3],rptr_sync2_wrclk[2:0]})
+Expression totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       35 Item    1  (((wgray_next - 1) == {~rptr_sync2_wrclk[4:3],rptr_sync2_wrclk[2:0]}) || fifo_full_val)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13        13         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /custom_async_fifo_tb/iDUT/u_wptr_full --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../async_fifo/wptr_full.sv
+    23              1                        156     
+    25              1                          2     
+    27              1                        154     
+    30              1                        103     
+    31              1                        218     
+    32              1                        178     
+    34              1                        234     
+    35              1                        234     
+    37              1                         80     
+    39              1                          2     
+    40              1                          2     
+    42              1                         78     
+    43              1                         78     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         72        72         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /custom_async_fifo_tb/iDUT/u_wptr_full --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         36 
+Toggled Node Count   =         36 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (72 of 72 bins)
+
+=================================================================================
+=== Instance: /custom_async_fifo_tb/iDUT
+=== Design Unit: work.custom_async_fifo
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        108       108         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /custom_async_fifo_tb/iDUT --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         54 
+Toggled Node Count   =         54 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (108 of 108 bins)
+
+
+Total Coverage By Instance (filtered view): 100.00%
+

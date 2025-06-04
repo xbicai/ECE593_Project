@@ -1,4 +1,4 @@
-// `define BUG
+`define BUG
 
 module custom_fifomem (
   wen, fifo_full, wclk_i,
@@ -26,6 +26,7 @@ module custom_fifomem (
     if (ren & ~fifo_empty) begin
       dout <= mem_array[rd_addr];
     end
+    else dout <= 1'bx;
   end
   `endif
 
@@ -33,6 +34,8 @@ module custom_fifomem (
   always_ff @(posedge wclk_i) begin
     if (wen & ~fifo_full)
       mem_array[wr_addr] <= din;
+    else 
+      mem_array[wr_addr] <= mem_array[wr_addr];
   end
 
 endmodule

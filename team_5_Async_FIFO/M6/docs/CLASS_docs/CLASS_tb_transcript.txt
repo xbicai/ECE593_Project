@@ -1,0 +1,292 @@
+# vsim -c -coverage custom_async_fifo_tb -voptargs="+acc +cover=bcesft" -logfile ../../docs/CLASS_docs/CLASS_tb_transcript.txt 
+# Start time: 21:41:58 on Jun 03,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ./async_fifo_tb.sv(54): (vopt-2685) [TFMPC] - Too few port connections for 'iDUT'.  Expected 12, found 10.
+# ** Warning: ./async_fifo_tb.sv(54): (vopt-2718) [TFMPC] - Missing connection for port 'fifo_almost_empty'.
+# ** Warning: ./async_fifo_tb.sv(54): (vopt-2718) [TFMPC] - Missing connection for port 'fifo_almost_full'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# //  Questa Sim-64
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.intf(fast)
+# Loading work.new_proj_pkg(fast)
+# Loading work.async_fifo_tb_sv_unit(fast)
+# Loading work.custom_async_fifo_tb(fast)
+# Loading work.intf(fast__2)
+# Loading work.custom_async_fifo(fast)
+# Loading work.custom_sync_r2w(fast)
+# Loading work.custom_sync_w2r(fast)
+# Loading work.custom_fifomem(fast)
+# Loading work.custom_rptr_empty(fast)
+# Loading work.custom_wptr_full(fast)
+# Loading work.test(fast)
+# coverage exclude -src ./components/package.sv
+# ** UI-Msg: (vsim-4053) File './components/package.sv' was not found or has null coverage data.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+#                    0	reset started
+#                    5	reset ended
+#                    5	Generator started
+#                    5	Generator completed
+# driver started
+# 
+# monitor_wr started
+# monitor_rd started
+# SCOREBOARD DATA:          8, ADDR:          4
+# 
+# TIME=15	SCB	WRITE=230
+# TIME=25	SCB	WRITE=145
+# TIME=35	SCB	WRITE= 92
+# TIME=45	SCB	WRITE= 92
+# TIME=55	SCB	WRITE=149
+# TIME=63	SCB	READ=230
+# TIME=65	SCB	WRITE=192
+# TIME=75	SCB	WRITE=192
+# TIME=77	SCB	READ=145
+# TIME=85	SCB	WRITE=193
+# TIME=95	SCB	WRITE= 37
+# TIME=125	SCB	WRITE=189
+# TIME=135	SCB	WRITE=159
+# TIME=145	SCB	WRITE=159
+# TIME=155	SCB	WRITE= 31
+# TIME=195	SCB	WRITE= 56
+# TIME=205	SCB	WRITE= 92
+# TIME=215	SCB	WRITE= 92
+# TIME=225	SCB	WRITE=182
+# TIME=231	SCB	READ= 92
+# TIME=259	SCB	READ= 92
+# TIME=265	SCB	WRITE=119
+# TIME=275	SCB	WRITE=137
+# TIME=285	SCB	FIFO is full, can't write
+# TIME=295	SCB	WRITE= 67
+# TIME=305	SCB	FIFO is full, can't write
+# TIME=315	SCB	FIFO is full, can't write
+# TIME=325	SCB	FIFO is full, can't write
+# TIME=335	SCB	FIFO is full, can't write
+# TIME=365	SCB	FIFO is full, can't write
+# TIME=375	SCB	FIFO is full, can't write
+# TIME=385	SCB	READ=149
+# TIME=385	SCB	FIFO is full, can't write
+# TIME=395	SCB	FIFO is full, can't write
+# TIME=415	SCB	FIFO is full, can't write
+# TIME=425	SCB	WRITE=142
+# TIME=427	SCB	READ=192
+# TIME=435	SCB	FIFO is full, can't write
+# TIME=441	SCB	READ=192
+# TIME=455	SCB	FIFO is full, can't write
+# TIME=465	SCB	WRITE=177
+# TIME=475	SCB	WRITE=208
+# TIME=485	SCB	FIFO is full, can't write
+# TIME=495	SCB	FIFO is full, can't write
+# TIME=505	SCB	FIFO is full, can't write
+# TIME=515	SCB	FIFO is full, can't write
+# TIME=525	SCB	READ=193
+# TIME=525	SCB	FIFO is full, can't write
+# TIME=535	SCB	FIFO is full, can't write
+# TIME=555	SCB	FIFO is full, can't write
+# TIME=565	SCB	WRITE=128
+# TIME=575	SCB	FIFO is full, can't write
+# TIME=581	SCB	READ= 37
+# TIME=585	SCB	FIFO is full, can't write
+# TIME=595	SCB	READ=189
+# TIME=595	SCB	FIFO is full, can't write
+# TIME=605	SCB	FIFO is full, can't write
+# TIME=615	SCB	WRITE=142
+# TIME=625	SCB	FIFO is full, can't write
+# TIME=635	SCB	WRITE= 48
+# TIME=645	SCB	FIFO is full, can't write
+# TIME=655	SCB	FIFO is full, can't write
+# TIME=685	SCB	FIFO is full, can't write
+# TIME=695	SCB	FIFO is full, can't write
+# TIME=705	SCB	FIFO is full, can't write
+# TIME=707	SCB	READ=159
+# TIME=721	SCB	READ=159
+# TIME=735	SCB	READ= 31
+# TIME=749	SCB	READ= 56
+# TIME=755	SCB	WRITE=172
+# TIME=777	SCB	READ= 92
+# TIME=795	SCB	WRITE= 22
+# TIME=805	SCB	READ= 92
+# TIME=805	SCB	WRITE=162
+# TIME=815	SCB	WRITE=162
+# TIME=819	SCB	READ=182
+# TIME=833	SCB	READ=119
+# TIME=847	SCB	READ=137
+# TIME=875	SCB	READ= 67
+# TIME=903	SCB	READ=142
+# TIME=917	SCB	READ=177
+# TIME=931	SCB	READ=208
+# TIME=945	SCB	READ=128
+# TIME=959	SCB	READ=142
+# TIME=965	SCB	WRITE=105
+# TIME=987	SCB	READ= 48
+# TIME=995	SCB	WRITE=213
+# TIME=1015	SCB	READ=172
+# TIME=1029	SCB	READ= 22
+# TIME=1045	SCB	WRITE=102
+# TIME=1055	SCB	WRITE=102
+# TIME=1057	SCB	READ=162
+# TIME=1071	SCB	READ=162
+# TIME=1075	SCB	WRITE=248
+# TIME=1085	SCB	READ=105
+# TIME=1099	SCB	READ=213
+# TIME=1113	SCB	READ=102
+# TIME=1115	SCB	WRITE=173
+# TIME=1125	SCB	WRITE=173
+# TIME=1127	SCB	READ=102
+# TIME=1141	SCB	READ=248
+# TIME=1169	SCB	READ=173
+# TIME=1197	SCB	READ=173
+# TIME=1211	SCB	FIFO is empty, can't read
+# TIME=1225	SCB	FIFO is empty, can't read
+# TIME=1267	SCB	FIFO is empty, can't read
+# TIME=1275	SCB	WRITE=142
+# TIME=1281	SCB	FIFO is empty, can't read
+# TIME=1295	SCB	FIFO is empty, can't read
+# TIME=1309	SCB	FIFO is empty, can't read
+# TIME=1323	SCB	READ=142
+# TIME=1337	SCB	FIFO is empty, can't read
+# TIME=1351	SCB	FIFO is empty, can't read
+# TIME=1379	SCB	FIFO is empty, can't read
+# TIME=1395	SCB	WRITE=131
+# TIME=1405	SCB	WRITE=131
+# TIME=1407	SCB	FIFO is empty, can't read
+# TIME=1425	SCB	WRITE= 72
+# TIME=1435	SCB	FIFO is empty, can't read
+# TIME=1455	SCB	WRITE= 41
+# TIME=1463	SCB	READ=131
+# TIME=1465	SCB	WRITE=240
+# TIME=1475	SCB	WRITE=240
+# TIME=1505	SCB	READ=131
+# TIME=1533	SCB	READ= 72
+# TIME=1535	SCB	WRITE=139
+# TIME=1545	SCB	WRITE=139
+# TIME=1547	SCB	READ= 41
+# TIME=1561	SCB	READ=240
+# TIME=1565	SCB	WRITE= 80
+# TIME=1575	SCB	READ=240
+# TIME=1575	SCB	WRITE=215
+# TIME=1585	SCB	WRITE=215
+# TIME=1605	SCB	WRITE= 66
+# TIME=1615	SCB	WRITE= 66
+# TIME=1631	SCB	READ=139
+# TIME=1645	SCB	WRITE=251
+# TIME=1655	SCB	WRITE=251
+# TIME=1659	SCB	READ=139
+# TIME=1673	SCB	READ= 80
+# TIME=1675	SCB	WRITE= 55
+# TIME=1685	SCB	WRITE= 55
+# TIME=1687	SCB	READ=215
+# TIME=1695	SCB	WRITE=164
+# TIME=1701	SCB	READ=215
+# TIME=1715	SCB	READ= 66
+# TIME=1729	SCB	READ= 66
+# TIME=1735	SCB	WRITE=234
+# TIME=1771	SCB	READ=251
+# TIME=1775	SCB	WRITE=143
+# TIME=1799	SCB	READ=251
+# TIME=1805	SCB	WRITE=172
+# TIME=1835	SCB	WRITE=123
+# TIME=1841	SCB	READ= 55
+# TIME=1855	SCB	WRITE=189
+# TIME=1865	SCB	WRITE=189
+# TIME=1869	SCB	READ= 55
+# TIME=1883	SCB	READ=164
+# TIME=1885	SCB	WRITE=  8
+# TIME=1895	SCB	WRITE=  8
+# TIME=1897	SCB	READ=234
+# TIME=1939	SCB	READ=143
+# TIME=1955	SCB	WRITE= 66
+# TIME=1965	SCB	WRITE= 66
+# TIME=1967	SCB	READ=172
+# TIME=1975	SCB	WRITE= 47
+# TIME=1985	SCB	WRITE= 59
+# TIME=1995	SCB	READ=123
+# TIME=1995	SCB	WRITE=254
+# TIME=2005	SCB	WRITE=254
+# TIME=2023	SCB	READ=189
+# TIME=2025	SCB	WRITE=153
+# TIME=2035	SCB	WRITE=153
+# TIME=2065	SCB	READ=189
+# TIME=2085	SCB	WRITE=120
+# TIME=2093	SCB	READ=  8
+# TIME=2115	SCB	WRITE=219
+# TIME=2135	SCB	READ=  8
+# TIME=2191	SCB	READ= 66
+# TIME=2205	SCB	WRITE=236
+# TIME=2215	SCB	WRITE=236
+# TIME=2219	SCB	READ= 66
+# TIME=2225	SCB	WRITE=126
+# TIME=2233	SCB	READ= 47
+# TIME=2235	SCB	WRITE= 75
+# TIME=2245	SCB	WRITE= 75
+# TIME=2261	SCB	READ= 59
+# TIME=2265	SCB	WRITE=223
+# TIME=2275	SCB	WRITE=125
+# TIME=2285	SCB	WRITE=125
+# TIME=2289	SCB	READ=254
+# TIME=2295	SCB	WRITE=126
+# TIME=2325	SCB	WRITE=183
+# TIME=2345	SCB	READ=254
+# TIME=2345	SCB	WRITE=192
+# TIME=2355	SCB	FIFO is full, can't write
+# TIME=2365	SCB	FIFO is full, can't write
+# TIME=2373	SCB	READ=153
+# TIME=2395	SCB	WRITE=174
+# TIME=2415	SCB	READ=153
+# TIME=2415	SCB	WRITE=100
+# TIME=2425	SCB	FIFO is full, can't write
+# TIME=2435	SCB	FIFO is full, can't write
+# TIME=2443	SCB	READ=120
+# TIME=2445	SCB	FIFO is full, can't write
+# TIME=2455	SCB	WRITE=231
+# TIME=2457	SCB	READ=219
+# TIME=2471	SCB	READ=236
+# TIME=2475	SCB	WRITE=196
+# TIME=2485	SCB	READ=236
+# TIME=2505	SCB	WRITE=206
+# TIME=2513	SCB	READ=126
+# TIME=2535	SCB	WRITE= 85
+# TIME=2555	SCB	READ= 75
+# TIME=2585	SCB	WRITE= 80
+# TIME=2595	SCB	WRITE= 80
+# TIME=2597	SCB	READ= 75
+# TIME=2615	SCB	WRITE=114
+# TIME=2639	SCB	READ=223
+# TIME=2645	SCB	WRITE=185
+# TIME=2653	SCB	READ=125
+# TIME=2667	SCB	READ=125
+# TIME=2675	SCB	WRITE= 56
+# TIME=2681	SCB	READ=126
+# TIME=2685	SCB	WRITE=206
+# TIME=2695	SCB	READ=183
+# TIME=2695	SCB	FIFO is full, can't write
+# TIME=2705	SCB	WRITE=207
+# TIME=2737	SCB	READ=192
+# TIME=2745	SCB	WRITE= 82
+# TIME=2751	SCB	READ=174
+# TIME=2755	SCB	WRITE=180
+# TIME=2779	SCB	READ=100
+# TIME=2785	SCB	WRITE=200
+# gen.tx_count:         200, drive.tx_count_wr:         199, drive.tx_count_rd:         199, mon.tx_count_wr:        278, mon.tx_count_rd        199
+# tests are finished
+# 
+# ** Note: $stop    : ./components/env.sv(75)
+#    Time: 2786 ns  Iteration: 2  Instance: /custom_async_fifo_tb/test
+# Break in Task new_proj_pkg/environment::run at ./components/env.sv line 75
+# Stopped at ./components/env.sv line 75
+# End time: 21:42:00 on Jun 03,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 3
